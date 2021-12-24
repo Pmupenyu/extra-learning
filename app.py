@@ -3,12 +3,10 @@ from twilio.twiml.messaging_response import MessagingResponse
 from pymongo import MongoClient
 from datetime import datetime
 
-cluster = MongoClient("mongodb+srv://polingony:myf3lly@extralearningcluster.drdtq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
-db = cluster["e-learning"]
+cluster = MongoClient("mongodb+srv://jai:jai@cluster0.ax3qe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+db = cluster["bakery"]
 users = db["users"]
-level = db["level"]
-courses = db["courses"]
-subscriptions = db["subscriptions"]
+orders = db["orders"]
 
 app = Flask(__name__)
 
@@ -94,3 +92,4 @@ def reply():
 
 if __name__ == "__main__":
     app.run()
+
