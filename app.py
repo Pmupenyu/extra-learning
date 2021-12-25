@@ -3,10 +3,12 @@ from twilio.twiml.messaging_response import MessagingResponse
 from pymongo import MongoClient
 from datetime import datetime
 
-cluster = MongoClient("mongodb+srv://jai:jai@cluster0.ax3qe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
-db = cluster["bakery"]
+cluster = MongoClient("mongodb+srv://polingony:myf3lly@extralearningcluster.drdtq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+db = cluster["e-learning"]
 users = db["users"]
-orders = db["orders"]
+level = db["level"]
+courses = db["courses"]
+subscriptions = db["subscriptions"]
 
 app = Flask(__name__)
 
@@ -19,7 +21,7 @@ def reply():
     res = MessagingResponse()
     user = users.find_one({"number": number})
     if bool(user) == False:
-        msg = res.message("Hi, thanks for contacting *Extra Learning*.\nYou can choose from one of the options below: "
+        msg = res.message("Hi, thanks for contacting *The Red Velvet*.\nYou can choose from one of the options below: "
                     "\n\n*Type*\n\n 1️⃣ To *contact* us \n 2️⃣ To *order* snacks \n 3️⃣ To know our *working hours* \n 4️⃣ "
                     "To get our *address*")
         msg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
@@ -81,10 +83,9 @@ def reply():
         users.update_one(
             {"number": number}, {"$set": {"status": "ordered"}})
     elif user["status"] == "ordered":
-        res.message("Hello Extra Learning Welcomes you again.\nYou can choose from one of the options below: "
+        res.message("Hi, thanks for contacting again.\nYou can choose from one of the options below: "
                     "\n\n*Type*\n\n 1️⃣ To *contact* us \n 2️⃣ To *order* snacks \n 3️⃣ To know our *working hours* \n 4️⃣ "
                     "To get our *address*")
-        msg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
         users.update_one(
             {"number": number}, {"$set": {"status": "main"}})
     users.update_one({"number": number}, {"$push": {"messages": {"text": text, "date": datetime.now()}}})
