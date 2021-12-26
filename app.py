@@ -76,6 +76,11 @@ def reply():
         else:
             res.message("Please enter a valid response")
     elif user["status"] == "address":
+                try:
+            option = str(text)
+        except:
+            res.message("Please enter a valid response")
+            return str(res)
         selected = user["item"]
         res.message("Thanks for shopping with us 😊")
         res.message(f"Your order for *{selected}* has been received and will be delivered within an hour")
