@@ -76,7 +76,7 @@ def reply():
         else:
             res.message("Please enter a valid response")
     elif user["status"] == "address":
-                try:
+            
             option = str(text)
         except:
             res.message("Please enter a valid response")
