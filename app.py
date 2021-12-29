@@ -79,7 +79,7 @@ def reply():
         selected = user["item"]
         res.message("Thanks for shopping with us 😊")
         res.message(f"Your order for *{selected}* has been received and will be delivered within an hour")
-        orders.insert_one({"number": number, "item": selected, "address": text, "order_time": datetime.now()})
+        subscriptions.insert_one({"number": number, "item": selected, "address": text, "order_time": datetime.now()})
         users.update_one(
             {"number": number}, {"$set": {"status": "ordered"}})
     elif user["status"] == "ordered":
