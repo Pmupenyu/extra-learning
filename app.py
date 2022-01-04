@@ -6,9 +6,34 @@ from datetime import datetime
 cluster = MongoClient("mongodb+srv://polingony:UmnASDTkKZfPJvFA@extralearningcluster.drdtq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 db = cluster["e-learning"]
 users = db["users"]
-level = db["level"]
 courses = db["courses"]
+contacts = db["contacts"]
+subscription = db["subscription"]
 subscriptions = db["subscriptions"]
+demo_users = db["demo_users"]
+register_mode = db["register_mode"]
+details_mode = db["register_mode"]
+help_mode = db["help_mode"]
+freemium_users = db["freemium_users"]
+premium_users = db["premium_users"]
+super_users = db["super_users"]
+# Primary Database
+grade_one = db["grade_one"]
+grade_two = db["grade_two"]
+grade_three = db["grade_three"]
+grade_four = db["grade_four"]
+grade_five = db["grade_five"]
+grade_six = db["grade_six"]
+grade_seven = db["grade_seven"]
+# Secondary Database
+form_one = db["form_one"]
+form_two = db["form_two"]
+form_three = db["form_three"]
+form_four = db["form_four"]
+form_five = db["form_five"]
+form_six = db["form_six"]
+# Duration Database
+day_one = db["day_one"]
 
 app = Flask(__name__)
 
@@ -86,6 +111,7 @@ def reply():
         res.message("Hi, thanks for contacting again.\nYou can choose from one of the options below: "
                     "\n\n*Type*\n\n 1️⃣ To *contact* us \n 2️⃣ To *order* snacks \n 3️⃣ To know our *working hours* \n 4️⃣ "
                     "To get our *address*")
+        res.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
         users.update_one(
             {"number": number}, {"$set": {"status": "main"}})
     users.update_one({"number": number}, {"$push": {"messages": {"text": text, "date": datetime.now()}}})
