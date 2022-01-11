@@ -1,4 +1,3 @@
-from re import U
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 from pymongo import MongoClient, mongo_client
@@ -68,8 +67,7 @@ def reply():
         try:
             option = int(text)
         except:
-            res.message("Please enter a *valid* response or use *numbers* to respond in this *mode*"
-            "\n\nTo get Started Respond with the option of your choice using numbers:"
+            res.message("To get Started Respond with the option of your choice using numbers:"
                     "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ "
                     "Help  \n")
             return str(res)
