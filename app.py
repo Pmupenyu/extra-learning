@@ -75,25 +75,25 @@ def reply():
             return str(res)
 
         if option == 1:
-            res.message("   📝*YOU ARE NOW IN REGISTRATION MODE*;")
+            res.message("   📝 *YOU ARE NOW IN REGISTRATION MODE*;")
             res.message("1️⃣ Primary Education \n\n2️⃣ secondary Education \n\n3️⃣ Courses\n\n4️⃣ About Us \n\n5️⃣ Help \n\n0️⃣ Main Menu")
             register_mode.update_one(
                 {"number": number}, {"$set": {"status": "registration"}})
         elif option == 2:
-            res.message("   📜*DETAILS MODE*;")
+            res.message("   📜 *DETAILS MODE*;")
             details_mode.update_one(
                 {"number": number}, {"$set": {"status": "details"}})
             res.message(
                 "You can select one of the following cakes to order: \n\n1️⃣ Primary Education  \n2️⃣ Secondary Education \n3️⃣ Courses"
                 "\n4️⃣ About Us \n5️⃣ Help  \n0️⃣ Go Back")
         elif option == 3:
-            res.message("   📜*DEMO MODE*;")
+            res.message("   📜 *DEMO MODE*;")
             demo_users.update_one(
                 {"number": number}, {"$set": {"status": "demo"}})
             res.message("1️⃣ Primary Education \n\n2️⃣ secondary Education \n\n3️⃣ Courses\n\n4️⃣ Help \n\n0️⃣ Main Menu")
 
         elif option == 4:
-            res.message("   📜*HELP MODE*;")
+            res.message("   📜 *HELP MODE*;")
             res.message("1️⃣ English \n\n2️⃣ Shona \n\n3️⃣ Contacts \n\n4️⃣ About Us \n\n0️⃣ Main Menu")
             help_mode.update_one(
                 {"number": number}, {"$set": {"status": "details"}})
@@ -123,27 +123,27 @@ def reply():
                     "Help  \n"},
                     {"$set": {"status": "main"}})
         elif option == 1:
-            res.message("   📜*PRIMARY EDUCATION*;")
+            res.message("   📜 *PRIMARY EDUCATION*;")
             res.message("Please enter your address to confirm the order")
             register_mode.update_one(
                 {"number": number}, {"$set": {"status": "primary-registration"}})
         elif option == 2:
-            res.message("   📜*SECONDARY EDUCATION*;")
+            res.message("   📜 *SECONDARY EDUCATION*;")
             res.message("Please enter your address to confirm the order")
             register_mode.update_one(
                 {"number": number}, {"$set": {"status": "secondary-registration"}})
         elif option == 3:
-            res.message("   📜*COURSES SECTION*;")
+            res.message("   📜 *COURSES SECTION*;")
             res.message("Please enter your address to confirm the order")
             register_mode.update_one(
                 {"number": number}, {"$set": {"status": "course-registration"}})
         elif option == 4:
-            res.message("   📜*ABOUT US*;")
+            res.message("   📜 *ABOUT US*;")
             res.message("Please enter your address to confirm the order")
             register_mode.update_one(
                 {"number": number}, {"$set": {"status": "about"}})
         elif option == 5:
-            res.message("   📜*HELP*;")
+            res.message("   📜 *HELP*;")
             res.message("Please enter your address to confirm the order")
             register_mode.update_one(
                 {"number": number}, {"$set": {"status": "help"}})
