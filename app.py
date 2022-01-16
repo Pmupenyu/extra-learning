@@ -213,41 +213,26 @@ def reply():
             # ECD Registering Status (1st Name)
 
     elif user["status"] == "ecd-first-name":
-        try:
-            option = str
-        except:
             res.message("Please enter a valid response")
-            return str(res)
         firstname = (text)
-
-        if option == str:
             res.message("   📜 *ECD Registration :*")
             res.message("\n Enter *Last Name*")
             freemium_users.insert_one({"number": number, "name": firstname })
             users.update_one(
                 {"number": number},{"name": firstname}, {"$set": {"status": "ecd-surname-name"}})
-        else:
-            res.message("Please enter a valid response")
 
 
             # ECD Registering Status (Surname)
 
     elif user["status"] == "ecd-surname-name":
-        try:
-            option = str
-        except:
-            res.message("Please enter a valid response")
-            return str(res)
+        res.message("Please enter a valid response")
         lastname = (text)
 
-        if option == str:
             res.message("   📜 *ECD :*")
             res.message("Enter *Guardian Full Name*")
             freemium_users.update_one({"number": number, "lastname": lastname})
             users.update_one(
                 {"number": number},{"lastname": lastname}, {"$set": {"status": "ecd-guardian-name"}})
-        else:
-            res.message("Please enter a valid response")
 
             # ECD Registering Status (Guardian)
 
