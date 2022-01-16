@@ -128,7 +128,8 @@ def reply():
                     {"$set": {"status": "main"}})
         elif option == 1:
             res.message("   📜 *PRIMARY EDUCATION :*")
-            res.message("Please enter your address to confirm the order")
+            res.message("*_Select Desired level_*  0️⃣ ECD \n 1️⃣ Grade 1 \n 2️⃣ Grade 2 \n 3️⃣ Grade 3 \n 4️⃣ Grade 4 /n"
+                        "  5️⃣ Grade 5 \n 6️⃣ Grade 6 \n 7️⃣ Grade 7")
             users.update_one(
                 {"number": number}, {"$set": {"status": "primary-registration"}})
         elif option == 2:
