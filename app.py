@@ -216,7 +216,7 @@ def reply():
     elif user["status"] == "ecd-first-name":
             res.message("   📜 *ECD Registration :*")
             res.message("\n Enter *Last Name*")
-            freemium_users.insert_one({"number": number, "name": text, "recorded_time": datetime.now() })
+          
             users.update_one(
                 {"number": number},{"name": text}, {"$set": {"status": "ecd-surname-name"}})
 
@@ -225,7 +225,7 @@ def reply():
     elif user["status"] == "ecd-surname-name":
             res.message("   📜 *ECD :*")
             res.message("Enter *Guardian Full Name*")
-            freemium_users.update_one({"number": number, "lastname": text, "recorded_time": datetime.now()})
+           
             users.update_one(
                 {"number": number},{"lastname": text}, {"$set": {"status": "ecd-guardian-name"}})
 
