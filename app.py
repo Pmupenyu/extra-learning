@@ -213,21 +213,19 @@ def reply():
             # ECD Registering Status (1st Name)
 
     elif user["status"] == "ecd-first-name":
-            res.message("Please enter a valid response")
-        firstname = (text)
+
+            firstname = (text)
+
             res.message("   📜 *ECD Registration :*")
             res.message("\n Enter *Last Name*")
             freemium_users.insert_one({"number": number, "name": firstname })
             users.update_one(
                 {"number": number},{"name": firstname}, {"$set": {"status": "ecd-surname-name"}})
 
-
             # ECD Registering Status (Surname)
 
     elif user["status"] == "ecd-surname-name":
-        res.message("Please enter a valid response")
-        lastname = (text)
-
+            lastname = (text)
             res.message("   📜 *ECD :*")
             res.message("Enter *Guardian Full Name*")
             freemium_users.update_one({"number": number, "lastname": lastname})
@@ -237,59 +235,34 @@ def reply():
             # ECD Registering Status (Guardian)
 
     elif user["status"] == "ecd-guardian-name":
-        try:
-            option = str
-        except:
-            res.message("Please enter a valid response")
-            return str(res)
-        guardian = (text)
-
-        if option == str:
+            guardian = (text)
             res.message("   📜 *ECD :*")
             res.message("Enter your address")
             freemium_users.update_one({"number": number, "guardian": guardian})
             users.update_one(
                 {"number": number},{"guardian": guardian}, {"$set": {"status": "address"}})
-        else:
-            res.message("Please enter a valid response")
 
             # ECD Registering Status (Address)
 
     elif user["status"] == "address":
-        try:
-            option = str
-        except:
-            res.message("Please enter a valid response")
-            return str(res)
-        address = (text)
-
-        if option == str:
+            address = (text)
             res.message("   📜 *ECD :*")
             res.message("Enter *contact details* to complete registration")
             freemium_users.update_one({"number": number, "address": address})
             users.update_one(
                 {"number": number},{"address": address}, {"$set": {"status": "ecd-registered"}})
-        else:
-            res.message("Please enter a valid response")
+
 
             # ECD Registering Status (Address)
 
-    elif user["status"] == "ecd-registered":
-        try:
-            option = str
-        except:
             res.message("Please enter a valid response")
-            return str(res)
-        contact = (text)
-
-        if option == str:
+            contact = (text)
             res.message("   📜 *ECD :*")
             res.message("Enter *contact details* to complete registration")
             freemium_users.insert_one({"number": number, "contact": contact, "registration_time": datetime.now()})
             users.update_one(
                 {"number": number},{"contact": contact}, {"$set": {"status": "ecd-registered"}})
-        else:
-            res.message("Please enter a valid response")
+
 
             # Secondary Registering Status and options
 
