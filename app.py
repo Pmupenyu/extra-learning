@@ -216,47 +216,63 @@ def reply():
     elif user["status"] == "ecd-first-name":
             res.message("   📜 *ECD Registration :*")
             res.message("\n Enter *Last Name*")
-          
             users.update_one(
-                {"number": number},{"name": text}, {"$set": {"status": "ecd-surname-name"}})
-
+                {"number": number}, {"$set": {"status": "ecd-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
             # ECD Registering Status (Surname)
 
     elif user["status"] == "ecd-surname-name":
             res.message("   📜 *ECD :*")
             res.message("Enter *Guardian Full Name*")
-           
             users.update_one(
-                {"number": number},{"lastname": text}, {"$set": {"status": "ecd-guardian-name"}})
+                {"number": number},{"$set": {"status": "ecd-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
 
             # ECD Registering Status (Guardian)
 
     elif user["status"] == "ecd-guardian-name":
             res.message("   📜 *ECD :*")
             res.message("Enter your address")
-            freemium_users.update_one({"number": number, "guardian": text, "recorded_time": datetime.now()})
             users.update_one(
-                {"number": number},{"guardian": text}, {"$set": {"status": "address"}})
+                {"number": number}, {"$set": {"status": "address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
 
             # ECD Registering Status (Address)
 
     elif user["status"] == "address":
             res.message("   📜 *ECD :*")
-            res.message("Enter *contact details* to complete registration")
-            freemium_users.update_one({"number": number, "address": text, "recorded_time": datetime.now()})
+            res.message("Enter *contact details*")
             users.update_one(
-                {"number": number},{"address": text}, {"$set": {"status": "ecd-registered"}})
+                {"number": number}, {"$set": {"status": "ecd-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
 
+            # ECD Registering Status (contact)
 
-            # ECD Registering Status (Address)
-
-            res.message("Please enter a valid response")
-            contact = (text)
+    elif user["status"] == "ecd-contact-reg":
             res.message("   📜 *ECD :*")
-            res.message("Enter *contact details* to complete registration")
-            freemium_users.insert_one({"number": number, "contact": contact, "registration_time": datetime.now()})
+            res.message("Now Enter your access *Password* that you can remember")
             users.update_one(
-                {"number": number},{"contact": contact}, {"$set": {"status": "ecd-registered"}})
+                {"number": number}, {"$set": {"status": "ecd-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+
+            # ECD Registering Status (Registered)
+
+    elif user["status"] == "ecd-registered":
+            fullname = user["firstname "] + user["lastname"]
+            contact = user["contact"]
+            res.message("Please enter a valid response")
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n")
+            res.message("You are now registered, \n\n ")
+            freemium_users.insert_one({"number": number, "fullname": fullname, "contact": contact, "registration_time": datetime.now()})
+            users.update_one(
+                {"number": number},{"contact": contact}, {"$set": {"status": "main"}})
 
 
             # Secondary Registering Status and options
