@@ -52,12 +52,6 @@ def reply():
     ecdfree = freemium_users.find_one({"number": number})
     userpaid = premium_users.find_one({"number": number})
     userdemo = demo_users.find_one({"number": number})
-    fullname = user["firstname " +"lastname"]
-    name = user["firstname"]
-    surname = user["lastname"]
-    contact = user["contact"]
-    address = user["address"]
-    guardian = user["guardian"]
 
 
     # Main Checking user is in db
@@ -283,9 +277,7 @@ def reply():
 
     elif user["status"] == "ecd-registered":
 
-            res.message("Getting Started🎉✨")
-            freemium_users.insert_one
-            ({"number": number, "name": name, "surname": surname, "fullname": fullname, "contact": contact, "guardian":guardian, "address": address, "registration_time": datetime.now()})            
+            res.message("Getting Started🎉✨")            
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
 
