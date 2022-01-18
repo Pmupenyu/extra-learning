@@ -264,14 +264,6 @@ def reply():
             # ECD Registering Status (password)
 
     elif user["status"] == "ecd-password":
-            fullname = user["firstname "] + user["lastname"]
-            name = user["firstname"]
-            surname = user["lastname"]
-            contact = user["contact"]
-            address = user["address"]
-            guardian = user["guardian"]
-            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
-            res.message(f"You are now registered, \n\n Your name is *{fullname}* , your address is*{address}* , the Guardian is *{guardian}* and contact details are *{contact}*")
             users.update_one(
                 {"number": number}, {"$set": {"status": "ecd-registered"}})
             users.update_one(
