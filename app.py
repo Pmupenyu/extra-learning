@@ -264,17 +264,16 @@ def reply():
             # ECD Registering Status (password)
 
     elif user["status"] == "ecd-password":
-            res.message("   📜 *ECD Registration :*")
-            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
-            
             fullname = user["firstname " +"lastname"]
             name = user["firstname"]
             surname = user["lastname"]
             contact = user["contact"]
             address = user["address"]
             guardian = user["guardian"]
-            res.message("You are now registered, \n\n Your name is *ph* ," 
-            "your address is*{address}* , the Guardian is *{guardian}* and contact details are *{contact}*")
+            res.message("   📜 *ECD Registration :*")
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            res.message(f"You are now registered, \n\n Your name is *{fullname}* ," 
+            f"your address is*{address}* , the Guardian is *{guardian}* and contact details are *{contact}*")
             freemium_users.insert_one
             ({"number": number, "name": name, "surname": surname, "fullname": fullname, "contact": contact, "guardian":guardian, "address": address, "registration_time": datetime.now()})
             users.update_one(
