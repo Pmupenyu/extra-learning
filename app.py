@@ -264,8 +264,17 @@ def reply():
             # ECD Registering Status (password)
 
     elif user["status"] == "ecd-password":
+            fullname = user["firstname "] + user["lastname"]
+            name = user["firstname"]
+            surname = user["lastname"]
+            contact = user["contact"]
+            address = user["address"]
+            guardian = user["guardian"]
             res.message("   📜 *ECD Registration :*")
-            res.message("Now Enter your access *Password* that you can remember")
+            ecdmsg = res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            ecdmsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            res.message(f"You are now registered, \n\n Your name is *{fullname}* , your address is*{address}* , the Guardian is *{guardian}* and contact details are *{contact}*")
+            freemium_users.insert_one({"number": number, "name": name, "surname": surname, "fullname": fullname, "contact": contact, "address": address, "registration_time": datetime.now()})
             users.update_one(
                 {"number": number}, {"$set": {"status": "ecd-registered"}})
             users.update_one(
@@ -275,18 +284,9 @@ def reply():
             # ECD Registering Status (Registered)
 
     elif user["status"] == "ecd-registered":
-            fullname = user["firstname "] + user["lastname"]
-            name = user["firstname"]
-            surname = user["lastname"]
-            contact = user["contact"]
-            address = user["address"]
-            guardian = user["guardian"]
-            ecdmsg = res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
-            ecdmsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
-            res.message(f"You are now registered, \n\n Your name is *{fullname}* , your address is*{address}* , the Guardian is *{guardian}* and contact details are *{contact}*")
-            freemium_users.insert_one({"number": number, "name": name, "surname": surname, "fullname": fullname, "contact": contact, "address": address, "registration_time": datetime.now()})
+            
             users.update_one(
-                {"number": number},{"contact": contact}, {"$set": {"status": "main"}})
+                {"number": number}, {"$set": {"status": "main"}})
 
 
             # Secondary Registering Status and options
