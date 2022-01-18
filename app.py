@@ -267,7 +267,7 @@ def reply():
             res.message("   📜 *ECD Registration :*")
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             
-            fullname = user["firstname "] + user["lastname"]
+            fullname = user["firstname " +"lastname"]
             name = user["firstname"]
             surname = user["lastname"]
             contact = user["contact"]
