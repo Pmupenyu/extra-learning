@@ -270,9 +270,7 @@ def reply():
             contact = user["contact"]
             address = user["address"]
             guardian = user["guardian"]
-            res.message("   📜 *ECD Registration :*")
-            ecdmsg = res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
-            ecdmsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             res.message(f"You are now registered, \n\n Your name is *{fullname}* , your address is*{address}* , the Guardian is *{guardian}* and contact details are *{contact}*")
             freemium_users.insert_one({"number": number, "name": name, "surname": surname, "fullname": fullname, "contact": contact, "address": address, "registration_time": datetime.now()})
             users.update_one(
