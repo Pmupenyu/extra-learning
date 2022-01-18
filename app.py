@@ -264,16 +264,8 @@ def reply():
             # ECD Registering Status (password)
 
     elif user["status"] == "ecd-password":
-            fullname = user["firstname " +"lastname"]
-            name = user["firstname"]
-            surname = user["lastname"]
-            contact = user["contact"]
-            address = user["address"]
-            guardian = user["guardian"]
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             res.message("You are now registered 🎉✨")
-            freemium_users.insert_one
-            ({"number": number, "name": name, "surname": surname, "fullname": fullname, "contact": contact, "guardian":guardian, "address": address, "registration_time": datetime.now()})
             users.update_one(
                 {"number": number}, {"$set": {"status": "ecd-registered"}})
             users.update_one(
@@ -283,7 +275,15 @@ def reply():
             # ECD Registering Status (Registered)
 
     elif user["status"] == "ecd-registered":
-            
+            fullname = user["firstname " +"lastname"]
+            name = user["firstname"]
+            surname = user["lastname"]
+            contact = user["contact"]
+            address = user["address"]
+            guardian = user["guardian"]
+            res.message("Getting Started🎉✨")
+            freemium_users.insert_one
+            ({"number": number, "name": name, "surname": surname, "fullname": fullname, "contact": contact, "guardian":guardian, "address": address, "registration_time": datetime.now()})            
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
 
