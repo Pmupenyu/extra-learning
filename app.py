@@ -49,7 +49,7 @@ def reply():
     number = number.replace("whatsapp:", "")[:-2]
     res = MessagingResponse()
     user = users.find_one({"number": number})
-    ecdfree = freemium_users.find_one({"number": number})
+    userfree = freemium_users.find_one({"number": number})
     userpaid = premium_users.find_one({"number": number})
     userdemo = demo_users.find_one({"number": number})
 
@@ -174,37 +174,37 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "ecd-first-name"}})
         elif option == 1:
-            res.message("   📜 *Grade 1 :*")
+            res.message("   📜 *Grade 1 Registration :*")
             res.message("Please enter *First Name*")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradeone-first-name"}})
         elif option == 2:
-            res.message("   📜 *Grade 2 :*")
+            res.message("   📜 *Grade 2 Registration :*")
             res.message("Please enter *First Name*")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradetwo-first-name"}})
         elif option == 3:
-            res.message("   📜 *Grade 3 :*")
+            res.message("   📜 *Grade 3 Registration :*")
             res.message("Please enter *First Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "gradethree-first-name"}})
+                {"number": number}, {"$set": {"status": "grade-three-first-name"}})
         elif option == 4:
-            res.message("   📜 *Grade 4 :*")
+            res.message("   📜 *Grade 4 Registration :*")
             res.message("Please enter *First Name*")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradefour-first-name"}})
         elif option == 5:
-            res.message("   📜 *Grade 5 :*")
+            res.message("   📜 *Grade 5 Registration :*")
             res.message("Please enter *First Name*")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradefive-first-name"}})
         elif option == 6:
-            res.message("   📜 *Grade 6 :*")
+            res.message("   📜 *Grade 6 Registration :*")
             res.message("Please enter *First Name*")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradesix-first-name"}})
         elif option == 7:
-            res.message("   📜 *Grade 7 :*")
+            res.message("   📜 *Grade 7 Registration :*")
             res.message("Please enter *First Name*")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradeseven-first-name"}})
@@ -606,6 +606,8 @@ def reply():
                 {"number": number}, {"$set": {"status": "gradefive-surname-name"}})
             users.update_one(
                 {"number": number}, {"$set": {"firstname": text}})
+            freemium_users.insert_one(
+                {"number": number}, {"$set": {"firstname": text}})
     
             # GRADE 5 Registering Status (Surname)
 
@@ -615,6 +617,8 @@ def reply():
             users.update_one(
                 {"number": number},{"$set": {"status": "gradefive-guardian-name"}})
             users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+            freemium_users.update_one(
                 {"number": number}, {"$set": {"lastname": text}})
 
             # GRADE 5 Registering Status (Guardian)
@@ -626,6 +630,8 @@ def reply():
                 {"number": number}, {"$set": {"status": "gradefive-address"}})
             users.update_one(
                 {"number": number}, {"$set": {"guardian": text}})
+            freemium_users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
 
             # GRADE 5 Registering Status (Address)
 
@@ -636,6 +642,8 @@ def reply():
                 {"number": number}, {"$set": {"status": "gradefive-contact-reg"}})
             users.update_one(
                 {"number": number}, {"$set": {"address": text}})
+            freemium_users.update_one(
+                {"number": number}, {"$set": {"address": text}})
 
             # GRADE 5 Registering Status (contact)
 
@@ -645,6 +653,8 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradefive-password"}})
             users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+            freemium_users.update_one(
                 {"number": number}, {"$set": {"contact": text}})
 
             # GRADE 5 Registering Status (password)
@@ -658,6 +668,10 @@ def reply():
                 {"number": number}, {"$set": {"status": "gradefive-registered"}})
             users.update_one(
                 {"number": number}, {"$set": {"password": text}})
+            freemium_users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+            freemium_users.update_one(
+                {"number": number}, {"$set": {"Registration_date": datetime.now()}})
 
 
             # GRADE 5 Registering Status (Registered)
