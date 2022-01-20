@@ -65,6 +65,7 @@ def reply():
                     "Help  \n")
         mmsg.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
         users.insert_one({"number": number, "status": "main", "messages": []})
+    
 
     # Main Status options
 
@@ -342,8 +343,8 @@ def reply():
 
     elif user["status"] == "gradeone-password":
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
-            gradeoneregmsg = res.message("You are now registered 🎉✨")
-            gradeoneregmsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
             res.message("   1️⃣ Start  :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradeone-registered"}})
@@ -419,8 +420,8 @@ def reply():
 
     elif user["status"] == "gradetwo-password":
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
-            gradeoneregmsg = res.message("You are now registered 🎉✨")
-            gradeoneregmsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
             res.message("   1️⃣ Start  :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradetwo-registered"}})
@@ -496,8 +497,8 @@ def reply():
 
     elif user["status"] == "gradethree-password":
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
-            gradeoneregmsg = res.message("You are now registered 🎉✨")
-            gradeoneregmsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
             res.message("   1️⃣ Start  :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradethree-registered"}})
@@ -574,8 +575,8 @@ def reply():
 
     elif user["status"] == "gradefour-password":
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
-            gradeoneregmsg = res.message("You are now registered 🎉✨")
-            gradeoneregmsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
             res.message("   1️⃣ Start  :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradefour-registered"}})
@@ -606,7 +607,7 @@ def reply():
                 {"number": number}, {"$set": {"status": "gradefive-surname-name"}})
             users.update_one(
                 {"number": number}, {"$set": {"firstname": text}})
-            freemium_users.insert_one(
+            users.update_one(
                 {"number": number}, {"$set": {"firstname": text}})
     
             # GRADE 5 Registering Status (Surname)
@@ -618,8 +619,6 @@ def reply():
                 {"number": number},{"$set": {"status": "gradefive-guardian-name"}})
             users.update_one(
                 {"number": number}, {"$set": {"lastname": text}})
-            freemium_users.update_one(
-                {"number": number}, {"$set": {"lastname": text}})
 
             # GRADE 5 Registering Status (Guardian)
 
@@ -629,8 +628,6 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradefive-address"}})
             users.update_one(
-                {"number": number}, {"$set": {"guardian": text}})
-            freemium_users.update_one(
                 {"number": number}, {"$set": {"guardian": text}})
 
             # GRADE 5 Registering Status (Address)
@@ -642,8 +639,6 @@ def reply():
                 {"number": number}, {"$set": {"status": "gradefive-contact-reg"}})
             users.update_one(
                 {"number": number}, {"$set": {"address": text}})
-            freemium_users.update_one(
-                {"number": number}, {"$set": {"address": text}})
 
             # GRADE 5 Registering Status (contact)
 
@@ -654,24 +649,18 @@ def reply():
                 {"number": number}, {"$set": {"status": "gradefive-password"}})
             users.update_one(
                 {"number": number}, {"$set": {"contact": text}})
-            freemium_users.update_one(
-                {"number": number}, {"$set": {"contact": text}})
 
             # GRADE 5 Registering Status (password)
 
     elif user["status"] == "gradefive-password":
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
-            gradeoneregmsg = res.message("You are now registered 🎉✨")
-            gradeoneregmsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
             res.message("   1️⃣ Start  :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradefive-registered"}})
             users.update_one(
                 {"number": number}, {"$set": {"password": text}})
-            freemium_users.update_one(
-                {"number": number}, {"$set": {"password": text}})
-            freemium_users.update_one(
-                {"number": number}, {"$set": {"Registration_date": datetime.now()}})
 
 
             # GRADE 5 Registering Status (Registered)
@@ -743,8 +732,8 @@ def reply():
 
     elif user["status"] == "gradesix-password":
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
-            gradeoneregmsg = res.message("You are now registered 🎉✨")
-            gradeoneregmsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
             res.message("   1️⃣ Start  :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradesix-registered"}})
@@ -820,8 +809,8 @@ def reply():
 
     elif user["status"] == "gradeseven-password":
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
-            gradeoneregmsg = res.message("You are now registered 🎉✨")
-            gradeoneregmsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
             res.message("   1️⃣ Start  :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradeseven-registered"}})
@@ -1054,6 +1043,7 @@ def reply():
 
     users.update_one({"number": number}, {"$push": {"messages": {"text": text, "date": datetime.now()}}})
     return str(res)
+
 
 if __name__ == "__main__":
     app.run()
