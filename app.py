@@ -177,37 +177,37 @@ def reply():
             res.message("   📜 *Grade 1 :*")
             res.message("Please enter *First Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "grade-one-first-name"}})
+                {"number": number}, {"$set": {"status": "gradeone-first-name"}})
         elif option == 2:
             res.message("   📜 *Grade 2 :*")
             res.message("Please enter *First Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "grade-two-first-name"}})
+                {"number": number}, {"$set": {"status": "gradetwo-first-name"}})
         elif option == 3:
             res.message("   📜 *Grade 3 :*")
             res.message("Please enter *First Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "grade-three-first-name"}})
+                {"number": number}, {"$set": {"status": "gradethree-first-name"}})
         elif option == 4:
             res.message("   📜 *Grade 4 :*")
             res.message("Please enter *First Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "grade-four-first-name"}})
+                {"number": number}, {"$set": {"status": "gradefour-first-name"}})
         elif option == 5:
             res.message("   📜 *Grade 5 :*")
             res.message("Please enter *First Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "grade-five-first-name"}})
+                {"number": number}, {"$set": {"status": "gradefive-first-name"}})
         elif option == 6:
             res.message("   📜 *Grade 6 :*")
             res.message("Please enter *First Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "grade-six-first-name"}})
+                {"number": number}, {"$set": {"status": "gradesix-first-name"}})
         elif option == 7:
             res.message("   📜 *Grade 7 :*")
             res.message("Please enter *First Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "grade-seven-first-name"}})
+                {"number": number}, {"$set": {"status": "gradeseven-first-name"}})
         else:
             res.message("Please enter a valid response")
 
