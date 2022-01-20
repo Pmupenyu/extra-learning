@@ -267,6 +267,7 @@ def reply():
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             ecdregmsg = res.message("You are now registered 🎉✨")
             ecdregmsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            res.message("   1️⃣ Start  :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "ecd-registered"}})
             users.update_one(
@@ -277,7 +278,554 @@ def reply():
 
     elif user["status"] == "ecd-registered":
 
-            res.message("Getting Started🎉✨")            
+            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ "
+                    "Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+
+            # GRADE 1 Registering Status (1st Name)
+
+    elif user["status"] == "gradeone-first-name":
+            res.message("   📜 *GRADE 1 Registration :*")
+            res.message("\n Enter *Last Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradeone-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
+            # GRADE 1 Registering Status (Surname)
+
+    elif user["status"] == "gradeone-surname-name":
+            res.message("   📜 *GRADE 1 Registration :*")
+            res.message("Enter *Guardian Full Name*")
+            users.update_one(
+                {"number": number},{"$set": {"status": "gradeone-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+
+            # GRADE 1 Registering Status (Guardian)
+
+    elif user["status"] == "gradeone-guardian-name":
+            res.message("   📜 *GRADE 1 Registration :*")
+            res.message("Enter your address")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradeone-address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
+
+            # GRADE 1 Registering Status (Address)
+
+    elif user["status"] == "gradeone-address":
+            res.message("   📜 *GRADE 1 Registration :*")
+            res.message("Enter *contact details*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradeone-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+            # GRADE 1 Registering Status (contact)
+
+    elif user["status"] == "gradeone-contact-reg":
+            res.message("   📜 *GRADE 1 Registration :*")
+            res.message("Now Enter your access *Password* that you can remember")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradeone-password"}})
+            users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+
+            # GRADE 1 Registering Status (password)
+
+    elif user["status"] == "gradeone-password":
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            gradeoneregmsg = res.message("You are now registered 🎉✨")
+            gradeoneregmsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            res.message("   1️⃣ Start  :*\n\n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradeone-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+
+
+            # GRADE 1 Registering Status (Registered)
+
+    elif user["status"] == "gradeone-registered":
+
+            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ "
+                    "Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+
+            # GRADE 2 Registering Status (1st Name)
+
+    elif user["status"] == "gradetwo-first-name":
+            res.message("   📜 *GRADE 2 Registration :*")
+            res.message("\n Enter *Last Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradetwo-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
+            # GRADE 2 Registering Status (Surname)
+
+    elif user["status"] == "gradetwo-surname-name":
+            res.message("   📜 *GRADE 2 Registration :*")
+            res.message("Enter *Guardian Full Name*")
+            users.update_one(
+                {"number": number},{"$set": {"status": "gradetwo-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+
+            # GRADE 2 Registering Status (Guardian)
+
+    elif user["status"] == "gradetwo-guardian-name":
+            res.message("   📜 *GRADE 2 Registration :*")
+            res.message("Enter your address")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradetwo-address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
+
+            # GRADE 2 Registering Status (Address)
+
+    elif user["status"] == "gradetwo-address":
+            res.message("   📜 *GRADE 2 Registration :*")
+            res.message("Enter *contact details*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradetwo-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+            # GRADE 2 Registering Status (contact)
+
+    elif user["status"] == "gradetwo-contact-reg":
+            res.message("   📜 *GRADE 2 Registration :*")
+            res.message("Now Enter your access *Password* that you can remember")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradetwo-password"}})
+            users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+
+            # GRADE 2 Registering Status (password)
+
+    elif user["status"] == "gradetwo-password":
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            gradeoneregmsg = res.message("You are now registered 🎉✨")
+            gradeoneregmsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            res.message("   1️⃣ Start  :*\n\n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradetwo-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+
+
+            # GRADE 2 Registering Status (Registered)
+
+    elif user["status"] == "gradetwo-registered":
+
+            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ "
+                    "Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+
+            # GRADE 3 Registering Status (1st Name)
+
+    elif user["status"] == "gradethree-first-name":
+            res.message("   📜 *GRADE 3 Registration :*")
+            res.message("\n Enter *Last Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradethree-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
+            # GRADE 3 Registering Status (Surname)
+
+    elif user["status"] == "gradethree-surname-name":
+            res.message("   📜 *GRADE 3 Registration :*")
+            res.message("Enter *Guardian Full Name*")
+            users.update_one(
+                {"number": number},{"$set": {"status": "gradethree-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+
+            # GRADE 3 Registering Status (Guardian)
+
+    elif user["status"] == "gradethree-guardian-name":
+            res.message("   📜 *GRADE 3 Registration :*")
+            res.message("Enter your address")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradethree-address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
+
+            # GRADE 3 Registering Status (Address)
+
+    elif user["status"] == "gradetwo-address":
+            res.message("   📜 *GRADE 3 Registration :*")
+            res.message("Enter *contact details*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradethree-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+            # GRADE 3 Registering Status (contact)
+
+    elif user["status"] == "gradetwo-contact-reg":
+            res.message("   📜 *GRADE 3 Registration :*")
+            res.message("Now Enter your access *Password* that you can remember")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradethree-password"}})
+            users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+
+            # GRADE 3 Registering Status (password)
+
+    elif user["status"] == "gradethree-password":
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            gradeoneregmsg = res.message("You are now registered 🎉✨")
+            gradeoneregmsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            res.message("   1️⃣ Start  :*\n\n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradethree-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+
+
+            # GRADE 3 Registering Status (Registered)
+
+    elif user["status"] == "gradethree-registered":
+
+            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ "
+                    "Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+
+
+            # GRADE 4 Registering Status (1st Name)
+
+    elif user["status"] == "gradefour-first-name":
+            res.message("   📜 *GRADE 4 Registration :*")
+            res.message("\n Enter *Last Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradefour-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
+            # GRADE 4 Registering Status (Surname)
+
+    elif user["status"] == "gradefour-surname-name":
+            res.message("   📜 *GRADE 4 Registration :*")
+            res.message("Enter *Guardian Full Name*")
+            users.update_one(
+                {"number": number},{"$set": {"status": "gradefour-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+
+            # GRADE 4 Registering Status (Guardian)
+
+    elif user["status"] == "gradefour-guardian-name":
+            res.message("   📜 *GRADE 4 Registration :*")
+            res.message("Enter your address")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradefour-address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
+
+            # GRADE 4 Registering Status (Address)
+
+    elif user["status"] == "gradefour-address":
+            res.message("   📜 *GRADE 4 Registration :*")
+            res.message("Enter *contact details*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradefour-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+            # GRADE 4 Registering Status (contact)
+
+    elif user["status"] == "gradefour-contact-reg":
+            res.message("   📜 *GRADE 4 Registration :*")
+            res.message("Now Enter your access *Password* that you can remember")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradefour-password"}})
+            users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+
+            # GRADE 4 Registering Status (password)
+
+    elif user["status"] == "gradefour-password":
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            gradeoneregmsg = res.message("You are now registered 🎉✨")
+            gradeoneregmsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            res.message("   1️⃣ Start  :*\n\n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradefour-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+
+
+            # GRADE 4 Registering Status (Registered)
+
+    elif user["status"] == "gradefour-registered":
+
+            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ "
+                    "Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+
+            # GRADE 5 Registering Status (1st Name)
+
+    elif user["status"] == "gradefive-first-name":
+            res.message("   📜 *GRADE 5 Registration :*")
+            res.message("\n Enter *Last Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradefive-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
+            # GRADE 5 Registering Status (Surname)
+
+    elif user["status"] == "gradefive-surname-name":
+            res.message("   📜 *GRADE 5 Registration :*")
+            res.message("Enter *Guardian Full Name*")
+            users.update_one(
+                {"number": number},{"$set": {"status": "gradefive-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+
+            # GRADE 5 Registering Status (Guardian)
+
+    elif user["status"] == "gradefive-guardian-name":
+            res.message("   📜 *GRADE 5 Registration :*")
+            res.message("Enter your address")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradefive-address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
+
+            # GRADE 5 Registering Status (Address)
+
+    elif user["status"] == "gradefive-address":
+            res.message("   📜 *GRADE 5 Registration :*")
+            res.message("Enter *contact details*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradefive-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+            # GRADE 5 Registering Status (contact)
+
+    elif user["status"] == "gradefive-contact-reg":
+            res.message("   📜 *GRADE 5 Registration :*")
+            res.message("Now Enter your access *Password* that you can remember")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradefive-password"}})
+            users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+
+            # GRADE 5 Registering Status (password)
+
+    elif user["status"] == "gradefive-password":
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            gradeoneregmsg = res.message("You are now registered 🎉✨")
+            gradeoneregmsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            res.message("   1️⃣ Start  :*\n\n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradefive-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+
+
+            # GRADE 5 Registering Status (Registered)
+
+    elif user["status"] == "gradefive-registered":
+
+            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ "
+                    "Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+
+
+            # GRADE 6 Registering Status (1st Name)
+
+    elif user["status"] == "gradesix-first-name":
+            res.message("   📜 *GRADE 6 Registration :*")
+            res.message("\n Enter *Last Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradesix-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
+            # GRADE 6 Registering Status (Surname)
+
+    elif user["status"] == "gradesix-surname-name":
+            res.message("   📜 *GRADE 6 Registration :*")
+            res.message("Enter *Guardian Full Name*")
+            users.update_one(
+                {"number": number},{"$set": {"status": "gradesix-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+
+            # GRADE 6 Registering Status (Guardian)
+
+    elif user["status"] == "gradesix-guardian-name":
+            res.message("   📜 *GRADE 6 Registration :*")
+            res.message("Enter your address")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradesix-address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
+
+            # GRADE 6 Registering Status (Address)
+
+    elif user["status"] == "gradesix-address":
+            res.message("   📜 *GRADE 6 Registration :*")
+            res.message("Enter *contact details*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradesix-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+            # GRADE 6 Registering Status (contact)
+
+    elif user["status"] == "gradesix-contact-reg":
+            res.message("   📜 *GRADE 6 Registration :*")
+            res.message("Now Enter your access *Password* that you can remember")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradesix-password"}})
+            users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+
+            # GRADE 6 Registering Status (password)
+
+    elif user["status"] == "gradesix-password":
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            gradeoneregmsg = res.message("You are now registered 🎉✨")
+            gradeoneregmsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            res.message("   1️⃣ Start  :*\n\n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradesix-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+
+
+            # GRADE 6 Registering Status (Registered)
+
+    elif user["status"] == "gradesix-registered":
+
+            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ "
+                    "Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+
+            # GRADE 7 Registering Status (1st Name)
+
+    elif user["status"] == "gradeseven-first-name":
+            res.message("   📜 *GRADE 7 Registration :*")
+            res.message("\n Enter *Last Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradeseven-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
+            # GRADE 7 Registering Status (Surname)
+
+    elif user["status"] == "gradeseven-surname-name":
+            res.message("   📜 *GRADE 7 Registration :*")
+            res.message("Enter *Guardian Full Name*")
+            users.update_one(
+                {"number": number},{"$set": {"status": "gradeseven-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+
+            # GRADE 7 Registering Status (Guardian)
+
+    elif user["status"] == "gradeseven-guardian-name":
+            res.message("   📜 *GRADE 7 Registration :*")
+            res.message("Enter your address")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradeseven-address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
+
+            # GRADE 7 Registering Status (Address)
+
+    elif user["status"] == "gradeseven-address":
+            res.message("   📜 *GRADE 7 Registration :*")
+            res.message("Enter *contact details*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradeseven-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+            # GRADE 7 Registering Status (contact)
+
+    elif user["status"] == "gradeseven-contact-reg":
+            res.message("   📜 *GRADE 7 Registration :*")
+            res.message("Now Enter your access *Password* that you can remember")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradeseven-password"}})
+            users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+
+            # GRADE 7 Registering Status (password)
+
+    elif user["status"] == "gradeseven-password":
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            gradeoneregmsg = res.message("You are now registered 🎉✨")
+            gradeoneregmsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            res.message("   1️⃣ Start  :*\n\n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "gradeseven-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+
+
+            # GRADE 7 Registering Status (Registered)
+
+    elif user["status"] == "gradeseven-registered":
+
+            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ "
+                    "Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
 
