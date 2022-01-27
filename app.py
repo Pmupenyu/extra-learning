@@ -1,6 +1,6 @@
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
-from pymongo import MongoClient, mongo_client
+from pymongo import MongoClient
 from datetime import datetime
 
 # Database
@@ -12,7 +12,6 @@ courses = db["courses"]
 contacts = db["contacts"]
 subscription = db["subscription"]
 subscriptions = db["subscriptions"]
-demo_users = db["demo_users"]
 freemium_users = db["freemium_users"]
 freemium_ecd = db["freemium_ecd"]
 premium_users = db["premium_users"]
@@ -49,9 +48,11 @@ def reply():
     number = number.replace("whatsapp:", "")[:-2]
     res = MessagingResponse()
     user = users.find_one({"number": number})
+    #fname = user["firstname"]
+    #sname = user["lastname"]
+    #fullname = fname + sname
     userfree = freemium_users.find_one({"number": number})
     userpaid = premium_users.find_one({"number": number})
-    userdemo = demo_users.find_one({"number": number})
 
 
     # Main Checking user is in db
@@ -79,16 +80,35 @@ def reply():
             return str(res)
 
         if option == 1:
-            res.message("   📝 *YOU ARE NOW IN REGISTRATION MODE :*")
-            res.message("1️⃣ Primary Education \n\n2️⃣ secondary Education \n\n3️⃣ Courses\n\n4️⃣ About Us \n\n5️⃣ Help \n\n0️⃣ Main Menu")
-            users.update_one(
+            if bool (userfree) == True:
+                res.message("💻 LOGIN MODE:\n\n |")
+                res.message("Please enter your Password:")
+                users.update_one(
+                    {"number": number}, {"$set": {"status": "loginfree"}})
+            elif bool (userpaid) == True:
+                res.message("💻 LOGIN MODE:\n\n |")
+                res.message("✍Please enter your Password:")
+                users.update_one(
+                    {"number": number}, {"$set": {"status": "login"}})
+            elif bool (userfree) == False:
+                res.message("Please enter a valid response")
+                users.update_one(
+                    {"number": number}, {"$set": {"status": "registration"}})
+            elif bool (userpaid) == False:
+                res.message("Please enter a valid response")
+                users.update_one(
+                    {"number": number}, {"$set": {"status": "login"}})
+            else: 
+                res.message("   📝 *YOU ARE NOW IN REGISTRATION MODE :*")
+                res.message("1️⃣ Primary Education \n\n2️⃣ secondary Education \n\n3️⃣ Courses\n\n4️⃣ About Us \n\n5️⃣ Help \n\n0️⃣ Main Menu")
+                users.update_one(
                 {"number": number}, {"$set": {"status": "registration"}})
         elif option == 2:
             res.message("   📜 *DETAILS MODE :*")
             users.update_one(
                 {"number": number}, {"$set": {"status": "details"}})
             res.message(
-                "You can select one of the following cakes to order: \n\n1️⃣ Primary Education  \n2️⃣ Secondary Education \n3️⃣ Courses"
+                "You can select one of the following *options* for details: \n\n1️⃣ Primary Education  \n2️⃣ Secondary Education \n3️⃣ Courses"
                 "\n4️⃣ About Us \n5️⃣ Help  \n0️⃣ Go Back")
         elif option == 3:
             res.message("   📜 *DEMO MODE :*")
@@ -107,7 +127,6 @@ def reply():
                     "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ "
                     "Help  \n")
 
-
     # Registering Status and options
 
 
@@ -117,7 +136,6 @@ def reply():
         except:
             res.message("Please enter a valid response")
             return str(res)
-
         if option == 0:
             users.update_one(
                 {"number": number}, {"*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
@@ -135,30 +153,30 @@ def reply():
                 {"number": number}, {"$set": {"status": "primary-registration"}})
         elif option == 2:
             res.message("   📜 *SECONDARY EDUCATION :*")
-            res.message("Please enter your address to confirm the order")
+            res.message("*_Select level to Register_* \n\n 1️⃣ Form 1 \n 2️⃣ Form 2 \n 3️⃣ Form 3 \n 4️⃣ Form 4 "
+                        " \n 5️⃣ Form 5 \n 6️⃣ Form 6")
             users.update_one(
                 {"number": number}, {"$set": {"status": "secondary-registration"}})
         elif option == 3:
             res.message("   📜 *COURSES SECTION :*")
-            res.message("Please enter your address to confirm the order")
+            res.message("*_Select level to Register_* \n\n 0️⃣ Programming \n 1️⃣ VID \n 2️⃣ Web Designing \n 3️⃣ Modern Fashion and Fabrics \n 4️⃣ Nurse Aide "
+                        " \n 5️⃣ Auto Mechanics \n 6️⃣ Electronics \n 7️⃣ Cyber Security")
             users.update_one(
                 {"number": number}, {"$set": {"status": "course-registration"}})
         elif option == 4:
             res.message("   📜 *ABOUT US :*")
-            res.message("Please enter your address to confirm the order")
+            res.message("*_Select option of choice_* \n\n 0️⃣ Main Menu \n 1️⃣ About Platform \n 2️⃣ Contact \n 3️⃣ About us \n 4️⃣ Help ")
             users.update_one(
                 {"number": number}, {"$set": {"status": "about"}})
         elif option == 5:
             res.message("   📜 *HELP :*")
-            res.message("Please enter your address to confirm the order")
+            res.message("*_Select option of choice_* \n\n 0️⃣ Main Menu \n 1️⃣ English \n 2️⃣ Shona \n 3️⃣ Ndebele \n 4️⃣ Contact ")
             users.update_one(
                 {"number": number}, {"$set": {"status": "help"}})
         else:
             res.message("Please enter a valid response")
 
-            # Login Status
-
-            
+        
 
             # Primary Registering Status and options
 
@@ -288,6 +306,8 @@ def reply():
             ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "ecd"}})
 
             # GRADE 1 Registering Status (1st Name)
 
@@ -365,6 +385,8 @@ def reply():
             ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "gradeone"}})
 
             # GRADE 2 Registering Status (1st Name)
 
@@ -442,6 +464,8 @@ def reply():
             ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "gradetwo"}})
 
             # GRADE 3 Registering Status (1st Name)
 
@@ -519,6 +543,8 @@ def reply():
             ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "gradethree"}})
 
 
             # GRADE 4 Registering Status (1st Name)
@@ -597,6 +623,8 @@ def reply():
             ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "gradefour"}})
 
             # GRADE 5 Registering Status (1st Name)
 
@@ -605,8 +633,6 @@ def reply():
             res.message("\n Enter *Last Name*")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradefive-surname-name"}})
-            users.update_one(
-                {"number": number}, {"$set": {"firstname": text}})
             users.update_one(
                 {"number": number}, {"$set": {"firstname": text}})
     
@@ -676,6 +702,8 @@ def reply():
             ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "gradefive"}})
 
 
             # GRADE 6 Registering Status (1st Name)
@@ -754,6 +782,8 @@ def reply():
             ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "gradesix"}})
 
             # GRADE 7 Registering Status (1st Name)
 
@@ -831,6 +861,8 @@ def reply():
             ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "gradeseven"}})
 
 
             # Secondary Registering Status and options
@@ -890,35 +922,35 @@ def reply():
             return str(res)
 
         if option == 1:
-            res.message("   📜 *VID :*")
-            res.message("Please enter your address to confirm the order")
+            res.message("   📜 *VID Registration :*")
+            res.message("Please enter *First Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "primary-registration"}})
+                {"number": number}, {"$set": {"status": "vid-first-name"}})
         elif option == 2:
-            res.message("   📜 *Web Designing :*")
-            res.message("Please enter your address to confirm the order")
+            res.message("   📜 *Web Designing Registration :*")
+            res.message("Please enter *First Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "secondary-registration"}})
+                {"number": number}, {"$set": {"status": "wd-first-name"}})
         elif option == 3:
-            res.message("   📜 *Web Development :*")
-            res.message("Please enter your address to confirm the order")
+            res.message("   📜 *Web Development Registration :*")
+            res.message("Please enter *First Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "course-registration"}})
+                {"number": number}, {"$set": {"status": "wdd-first-name"}})
         elif option == 4:
-            res.message("   📜 *Modern Fashion and Fabrics :*")
-            res.message("Please enter your address to confirm the order")
+            res.message("   📜 *Modern Fashion and Fabrics Registration :*")
+            res.message("Please enter *First Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "about"}})
+                {"number": number}, {"$set": {"status": "mff-first-name"}})
         elif option == 5:
-            res.message("   📜 *Nurse Aid :*")
-            res.message("Please enter your address to confirm the order")
+            res.message("   📜 *Nurse Aid Registration :*")
+            res.message("Please enter *First Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "help"}})
+                {"number": number}, {"$set": {"status": "naid-first-name"}})
         elif option == 6:
-            res.message("   📜 *Auto Mechanics :*")
-            res.message("Please enter your address to confirm the order")
+            res.message("   📜 *Auto Mechanic Registration :*")
+            res.message("Please enter *First Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "about"}})
+                {"number": number}, {"$set": {"status": "amm-first-name"}})
         else:
             res.message("Please enter a valid response")
 
@@ -1028,15 +1060,59 @@ def reply():
         users.update_one(
             {"number": number}, {"$set": {"status": "main"}})
 
+            #Platform Commands
+
+    elif text == "Extra Learning":
+        res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Login \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ "
+                    "Help  \nTesting Commands")
+        users.update_one(
+            {"number": number}, {"$set": {"status": "main"}})
+
+            #Content Placeholder
+
+    elif user["status"] == "content":
+        res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ "
+                    "Help  \n")
+        users.update_one(
+            {"number": number}, {"$set": {"status": "main"}})
+
 
             # Freemium User Status
 
-    elif user["status"] == "registered":
-        res.message(f"Hello {freemium_users.__full_name}, Happy Learning.\nYou can choose from one of the options below: "
+    elif userpaid["status"] == "loginfree":
+        fname = user["firstname"]
+        if text == (userfree["password"]):
+            level = user["registration"]
+            res.message(f"Hello {fname}, Happy Learning.\nYou can choose from one of the options below: "
                     "\n\n*Type*\n\n 1️⃣ To *contact* us \n 2️⃣ To *order* snacks \n 3️⃣ To know our *working hours* \n 4️⃣ "
                     "To get our *address*")
-        users.update_one(
-            {"number": number}, {"$set": {"status": "login"}})
+            users.update_one(
+                {"number": number}, {"$set": {"status": f"{level}"}})
+        else:
+            res.message("Wrong Password..\n\n Try again")
+
+
+            # Premium User Status
+
+    elif userpaid["status"] == "login":
+        fname = user["firstname"]
+        if text == (userpaid["password"]):
+            level = user["registration"]
+            res.message(f"Hello {fname}, Happy Learning.\nYou can choose from one of the options below: "
+                    "\n\n*Type*\n\n 1️⃣ To *contact* us \n 2️⃣ To *order* snacks \n 3️⃣ To know our *working hours* \n 4️⃣ "
+                    "To get our *address*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": f"{level}"}})
+        else:
+            res.message("Wrong Password..\n\n Try again")
 
 
             # Update Root DB
