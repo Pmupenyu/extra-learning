@@ -280,8 +280,7 @@ def reply():
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
-                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ "
-                    "Help  \n")
+                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ Help  \n")
             ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
@@ -359,8 +358,7 @@ def reply():
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
-                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ "
-                    "Help  \n")
+                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ Help  \n")
             ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
@@ -438,8 +436,7 @@ def reply():
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
-                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ "
-                    "Help  \n")
+                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ Help  \n")
             ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
@@ -517,8 +514,7 @@ def reply():
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
-                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ "
-                    "Help  \n")
+                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ Help  \n")
             ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
@@ -675,8 +671,7 @@ def reply():
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
-                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ "
-                    "Help  \n")
+                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ Help  \n")
             ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
@@ -755,8 +750,7 @@ def reply():
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
-                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ "
-                    "Help  \n")
+                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ Help  \n")
             ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
@@ -834,8 +828,7 @@ def reply():
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
-                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ "
-                    "Help  \n")
+                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ Help  \n")
             ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
@@ -853,40 +846,40 @@ def reply():
             return str(res)
 
         if option == 0:
-            res.message("   📜 *ECD :*")
+            res.message("   📜 *Main Menu :*")
             res.message("Please enter your address to confirm the order")
             users.update_one(
-                {"number": number}, {"$set": {"status": "primary-registration"}})
+                {"number": number}, {"$set": {"status": "main"}})
         elif option == 1:
             res.message("   📜 *FORM 1 :*")
-            res.message("Please enter your address to confirm the order")
+            res.message("Please enter *First Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "primary-registration"}})
+                {"number": number}, {"$set": {"status": "formone-first-name"}})
         elif option == 2:
             res.message("   📜 *FORM 2 :*")
-            res.message("Please enter your address to confirm the order")
+            res.message("Please enter *First Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "secondary-registration"}})
+                {"number": number}, {"$set": {"status": "formtwo-first-name"}})
         elif option == 3:
             res.message("   📜 *FORM 3 :*")
-            res.message("Please enter your address to confirm the order")
+            res.message("Please enter *First Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "course-registration"}})
+                {"number": number}, {"$set": {"status": "formthree-first-name"}})
         elif option == 4:
             res.message("   📜 *FORM 4 :*")
-            res.message("Please enter your address to confirm the order")
+            res.message("Please enter *First Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "about"}})
+                {"number": number}, {"$set": {"status": "formfour-first-name"}})
         elif option == 5:
             res.message("   📜 *FORM 5 :*")
-            res.message("Please enter your address to confirm the order")
+            res.message("Please enter *First Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "help"}})
+                {"number": number}, {"$set": {"status": "formfive-first-name"}})
         elif option == 6:
             res.message("   📜 *FORM 6 :*")
-            res.message("Please enter your address to confirm the order")
+            res.message("Please enter *First Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "about"}})
+                {"number": number}, {"$set": {"status": "formsix-first-name"}})
         else:
             res.message("Please enter a valid response")
 
@@ -989,10 +982,10 @@ def reply():
             return str(res)
 
         if option == 0:
-            res.message("   📜 *ECD :*")
-            res.message("Please enter your address to confirm the order")
+            res.message("   📜 *MAIN MENU :*")
+            res.message(" 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ Help  \n")
             users.update_one(
-                {"number": number}, {"$set": {"status": "primary-registration"}})
+                {"number": number}, {"$set": {"status": "main"}})
         elif option == 1:
             res.message("   📜 *FORM 1 :*")
             res.message("Please enter your address to confirm the order")
