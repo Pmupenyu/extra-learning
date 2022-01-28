@@ -62,8 +62,7 @@ def reply():
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp"
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
-                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ "
-                    "Help  \n")
+                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ Help  \n")
         mmsg.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
         users.insert_one({"number": number, "status": "main", "messages": []})
     
@@ -75,33 +74,13 @@ def reply():
             option = int(text)
         except:
             res.message("Hi To get Started Respond with the option of your choice using numbers:"
-                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ "
-                    "Help  \n")
+                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ Help  \n")
             return str(res)
 
-        if option == 1:
-            if bool (userfree) == True:
-                res.message("💻 LOGIN MODE:\n\n |")
-                res.message("Please enter your Password:")
-                users.update_one(
-                    {"number": number}, {"$set": {"status": "loginfree"}})
-            elif bool (userpaid) == True:
-                res.message("💻 LOGIN MODE:\n\n |")
-                res.message("✍Please enter your Password:")
-                users.update_one(
-                    {"number": number}, {"$set": {"status": "login"}})
-            elif bool (userfree) == False:
-                res.message("Please enter a valid response")
-                users.update_one(
-                    {"number": number}, {"$set": {"status": "registration"}})
-            elif bool (userpaid) == False:
-                res.message("Please enter a valid response")
-                users.update_one(
-                    {"number": number}, {"$set": {"status": "login"}})
-            else: 
-                res.message("   📝 *YOU ARE NOW IN REGISTRATION MODE :*")
-                res.message("1️⃣ Primary Education \n\n2️⃣ secondary Education \n\n3️⃣ Courses\n\n4️⃣ About Us \n\n5️⃣ Help \n\n0️⃣ Main Menu")
-                users.update_one(
+        if option == 1: 
+            res.message("   📝 *YOU ARE NOW IN REGISTRATION MODE :*")
+            res.message("1️⃣ Primary Education \n\n2️⃣ secondary Education \n\n3️⃣ Courses\n\n4️⃣ About Us \n\n5️⃣ Help \n\n0️⃣ Main Menu")
+            users.update_one(
                 {"number": number}, {"$set": {"status": "registration"}})
         elif option == 2:
             res.message("   📜 *DETAILS MODE :*")
