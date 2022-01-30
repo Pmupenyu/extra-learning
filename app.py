@@ -266,7 +266,7 @@ def reply():
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             ecdregmsg = res.message("You are now registered 🎉✨")
             ecdregmsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
-            res.message("   1️⃣ *Start :*\n\n")
+            res.message("   1️⃣ Start  :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "ecd-registered"}})
             users.update_one(
@@ -344,7 +344,7 @@ def reply():
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             huraymsg = res.message("You are now registered 🎉✨")
             huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
-            res.message("   1️⃣ *Start :*\n\n")
+            res.message("   1️⃣ Start  :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradeone-registered"}})
             users.update_one(
@@ -422,7 +422,7 @@ def reply():
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             huraymsg = res.message("You are now registered 🎉✨")
             huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
-            res.message("   1️⃣ *Start :*\n\n")
+            res.message("   1️⃣ Start  :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradetwo-registered"}})
             users.update_one(
@@ -500,7 +500,7 @@ def reply():
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             huraymsg = res.message("You are now registered 🎉✨")
             huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
-            res.message("   1️⃣ *Start :*\n\n")
+            res.message("   1️⃣ Start  :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradethree-registered"}})
             users.update_one(
@@ -579,7 +579,7 @@ def reply():
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             huraymsg = res.message("You are now registered 🎉✨")
             huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
-            res.message("   1️⃣ *Start :*\n\n")
+            res.message("   1️⃣ Start  :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradefour-registered"}})
             users.update_one(
@@ -657,7 +657,7 @@ def reply():
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             huraymsg = res.message("You are now registered 🎉✨")
             huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
-            res.message("   1️⃣ *Start :*\n\n")
+            res.message("   1️⃣ Start  :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradefive-registered"}})
             users.update_one(
@@ -736,7 +736,7 @@ def reply():
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             huraymsg = res.message("You are now registered 🎉✨")
             huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
-            res.message("   1️⃣ *Start :*\n\n")
+            res.message("   1️⃣ Start  :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradesix-registered"}})
             users.update_one(
@@ -814,7 +814,7 @@ def reply():
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             huraymsg = res.message("You are now registered 🎉✨")
             huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
-            startmsg = res.message("   1️⃣ *Start :*\n\n")
+            res.message("   1️⃣ Start  :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradeseven-registered"}})
             users.update_one(
