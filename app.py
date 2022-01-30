@@ -119,7 +119,7 @@ def reply():
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
-                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Login \n 3️⃣ Demo \n 4️⃣ Help  \n")
+                    "\n\n*Type*\n\n 1️⃣ Register \n\n 2️⃣ Login \n\n 3️⃣ Demo \n\n 4️⃣ Help  \n")
             users.update_one({"number":number},{"$set": {"status": "main"}})
         elif option == 1:
             res.message("   📜 *PRIMARY EDUCATION :*")
