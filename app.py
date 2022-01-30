@@ -85,6 +85,7 @@ def reply():
                 {"number": number}, {"$set": {"status": "registration"}})
         elif option == 2:
             res.message("   📜 *LOGIN MODE :*")
+            res.message("1️⃣ Check")
             users.update_one(
                 {"number": number}, {"$set": {"status": "loginpointer"}})
         elif option == 3:
@@ -1050,6 +1051,11 @@ def reply():
 
             # Login Checking Point
     elif user["status"] == "loginpointer":
+        try:
+            option = int(text)
+        except:
+            res.message("Please enter a valid response")
+            return str(res)
         if user["subscription"] == "freemium":
             res.message("Hello you're freemium user you will have limited content")
             users.update_one(
