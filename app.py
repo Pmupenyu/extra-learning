@@ -1050,6 +1050,11 @@ def reply():
 
             # Login Checking Point
     elif user["status"] == "loginpointer":
+        try:
+            number = number
+        except:
+            res.message("Please enter your number")
+            return str(res)
         if user["subscription"] == "freemium":
             res.message("Hello you're freemium user you will have limited content")
             users.update_one(
