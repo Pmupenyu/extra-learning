@@ -1054,13 +1054,15 @@ def reply():
         except:
             res.message("Please enter a valid response")
             return str(res)
+        dnumber = ()
         fname = user["firstname"]
         if user["subscription"] == "freemium":
-            res.message(f"Hello {fname} you're freemium user you will have limited content")
+            res.message(f"Hello {fname} you're a freemium user you will have limited content")
+            userfree.insert_one({"number": number, "day_number": dnumber, "address": text, "access_time": datetime.now()})
             users.update_one(
             {"number": number}, {"$set": {"status": "main"}})
         elif user["subscription"] == "premium":
-            res.message("Hello You're Premium user 😊")
+            res.message(f"Hello {fname} You're a Premium user 😊")
             users.update_one(
             {"number": number}, {"$set": {"status": "main"}})
         elif bool (user["subscription"]) == False:
