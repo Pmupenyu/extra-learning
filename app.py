@@ -65,7 +65,9 @@ def reply():
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
                     "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Login \n 3️⃣ Demo \n 4️⃣ Help  \n")
         mmsg.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
-        users.insert_one({"number": number, "status": "main","subscription":"none" "messages": []})
+        users.insert_one({"number": number, "status": "main", "messages": []})
+        users.update_one(
+                {"number": number}, {"$set": {"subscription":"none"}})
     
 
     # Main Status options
