@@ -1050,15 +1050,12 @@ def reply():
 
             # Login Checking Point
     elif user["status"] == "loginpointer":
-        fname = user["firstname"]
-        level = user["registration"]
-        usertext = text
         if user["subscription"] == "freemium":
-            res.message(f"Hello {fname} you're freemium user you will have limited content")
+            res.message("Hello you're freemium user you will have limited content")
             users.update_one(
             {"number": number}, {"$set": {"status": "main"}})
         elif user["subscription"] == "premium":
-            res.message(f"Hello {fname} You're Premium user 😊")
+            res.message("Hello You're Premium user 😊")
             users.update_one(
             {"number": number}, {"$set": {"status": "main"}})
         elif bool (user["subscription"]) == False:
