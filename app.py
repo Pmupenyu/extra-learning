@@ -65,7 +65,7 @@ def reply():
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
                     "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Login \n 3️⃣ Demo \n 4️⃣ Help  \n")
         mmsg.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
-        users.insert_one({"number": number, "status": "main", "messages": []})
+        users.insert_one({"number": number, "status": "main","subscription":"none" "messages": []})
     
 
     # Main Status options
@@ -1064,7 +1064,7 @@ def reply():
             res.message(f"👋🏼 Hello *{fname}* You're a Premium user 🥇")
             users.update_one(
             {"number": number}, {"$set": {"status": "main"}})
-        else:
+        elif user["subscription"] == "none":
             res.message("It looks like you're not registered")
             users.update_one(
             {"number": number}, {"$set": {"status": "main"}})
