@@ -115,14 +115,12 @@ def reply():
             res.message("Please enter a valid response")
             return str(res)
         if option == 0:
-            users.update_one(
-                {"number": number}, {"*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+            res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
-                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Login \n 3️⃣ Demo \n 4️⃣ "
-                    "Help  \n"},
-                    {"$set": {"status": "main"}})
+                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Login \n 3️⃣ Demo \n 4️⃣ Help  \n")
+            users.update_one({"number":number},{"$set": {"status": "main"}})
         elif option == 1:
             res.message("   📜 *PRIMARY EDUCATION :*")
             res.message("*_Select level to Register_* \n\n 0️⃣ ECD \n 1️⃣ Grade 1 \n 2️⃣ Grade 2 \n 3️⃣ Grade 3 \n 4️⃣ Grade 4 "
