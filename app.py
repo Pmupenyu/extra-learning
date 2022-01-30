@@ -1096,7 +1096,7 @@ def reply():
     elif userpaid["status"] == "loginfree":
         fname = user["firstname"]
         pw = user["password"]
-        if pw == text:
+        if text == pw:
             level = user["registration"]
             res.message(f"Hello {fname}, Happy Learning.\nYou can choose from one of the options below: "
                     "\n\n*Type*\n\n 1️⃣ To *contact* us \n 2️⃣ To *order* snacks \n 3️⃣ To know our *working hours* \n 4️⃣ "
