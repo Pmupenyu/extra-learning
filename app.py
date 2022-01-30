@@ -85,3 +85,12 @@ def reply():
             res.message("Please enter a *valid* response or use *numbers* to respond in this *mode*"
             "\n\nTo get Started Respond with the option of your choice using numbers:"
                     "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Login \n 3️⃣ Demo \n 4️⃣ Help  \n")
+
+            # Update Root DB
+
+    users.update_one({"number": number}, {"$push": {"messages": {"text": text, "date": datetime.now()}}})
+    return str(res)
+
+
+if __name__ == "__main__":
+    app.run()
