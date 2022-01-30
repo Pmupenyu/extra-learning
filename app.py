@@ -1094,7 +1094,6 @@ def reply():
             # Freemium User Status
 
     elif userpaid["status"] == "loginfree":
-        fname = user["firstname"]
         pw = user["password"]
         if text == pw:
             level = user["registration"]
