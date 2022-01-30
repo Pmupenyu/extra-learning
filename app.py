@@ -1059,7 +1059,7 @@ def reply():
             res.message(f"👋🏼 Hello *{fname}* you're a *_freemium_* user you will have limited content")
             res.message("💻 Enter your _password_ to continue...")
             users.update_one(
-            {"number": number}, {"$set": {"status": "main"}})
+            {"number": number}, {"$set": {"status": "loginfree"}})
         elif user["subscription"] == "premium":
             res.message(f"👋🏼 Hello *{fname}* You're a Premium user 🥇")
             users.update_one(
