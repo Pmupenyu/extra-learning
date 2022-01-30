@@ -54,6 +54,8 @@ def reply():
     #fullname = fname + sname
     userfree = freemium_users.find_one({"number": number})
     userpaid = premium_users.find_one({"number": number})
+    subs = user["subscription"]
+    usersub = users.find_one({"subscription": f"subs"})
 
 
     # Main Checking user is in db
@@ -1051,6 +1053,7 @@ def reply():
 
             # Login Checking Point
     elif user["status"] == "loginpointer":
+        
         try:
             option = int(text)
         except:
