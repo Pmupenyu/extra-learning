@@ -1063,13 +1063,10 @@ def reply():
             res.message(f"Hello {fname} You're Premium user 😊")
             users.update_one(
             {"number": number}, {"$set": {"status": "main"}})
-        else:
+        elif bool (usersub) == False:
             res.message("It looks like you're not registered")
-            res.message("   📝 *YOU ARE NOW IN REGISTRATION MODE :*")
-            res.message("1️⃣ Primary Education \n\n2️⃣ secondary Education \n\n3️⃣ Courses\n\n4️⃣ About Us \n\n5️⃣ Help \n\n0️⃣ Main Menu")
             users.update_one(
-                {"number": number}, {"$set": {"status": "registration"}})
-
+            {"number": number}, {"$set": {"status": "main"}})
 
 
             # Login Status
