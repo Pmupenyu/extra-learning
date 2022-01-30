@@ -283,7 +283,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
             users.update_one(
-                {"number": number}, {"$set": {"registration": "ecd"}})
+                {"number": number}, {"$set": {"registration": "ecd", "subscription": "freemium"}})
 
             # GRADE 1 Registering Status (1st Name)
 
