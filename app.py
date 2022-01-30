@@ -1056,8 +1056,9 @@ def reply():
         except:
             res.message("Please enter a valid response")
             return str(res)
+        fname = user["firstname"]
         if user["subscription"] == "freemium":
-            res.message("Hello you're freemium user you will have limited content")
+            res.message(f"Hello {fname} you're freemium user you will have limited content")
             users.update_one(
             {"number": number}, {"$set": {"status": "main"}})
         elif user["subscription"] == "premium":
