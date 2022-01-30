@@ -87,9 +87,6 @@ def reply():
             res.message("   📜 *LOGIN MODE :*")
             users.update_one(
                 {"number": number}, {"$set": {"status": "loginpointer"}})
-            res.message(
-                "You can select one of the following *options* for details: \n\n1️⃣ Primary Education  \n2️⃣ Secondary Education \n3️⃣ Courses"
-                "\n4️⃣ About Us \n5️⃣ Help  \n0️⃣ Go Back")
         elif option == 3:
             res.message("   📜 *DEMO MODE :*")
             users.update_one(
@@ -1055,6 +1052,7 @@ def reply():
     elif user["status"] == "loginpointer":
         fname = user["firstname"]
         level = user["registration"]
+        usertext = text
         if user["subscription"] == "freemium":
             res.message(f"Hello {fname} you're freemium user you will have limited content")
             users.update_one(
