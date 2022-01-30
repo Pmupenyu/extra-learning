@@ -1064,7 +1064,7 @@ def reply():
             res.message(f"👋🏼 Hello *{fname}* You're a Premium user 🥇")
             users.update_one(
             {"number": number}, {"$set": {"status": "main"}})
-        elif user["subscription"] == False:
+        else:
             res.message("It looks like you're not registered")
             users.update_one(
             {"number": number}, {"$set": {"status": "main"}})
