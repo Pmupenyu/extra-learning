@@ -266,7 +266,7 @@ def reply():
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             ecdregmsg = res.message("You are now registered 🎉✨")
             ecdregmsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
-            res.message("   1️⃣ Start  :*\n\n")
+            res.message("   1️⃣ *Start :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "ecd-registered"}})
             users.update_one(
@@ -344,7 +344,7 @@ def reply():
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             huraymsg = res.message("You are now registered 🎉✨")
             huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
-            res.message("   1️⃣ Start  :*\n\n")
+            res.message("   1️⃣ *Start :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradeone-registered"}})
             users.update_one(
@@ -422,7 +422,7 @@ def reply():
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             huraymsg = res.message("You are now registered 🎉✨")
             huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
-            res.message("   1️⃣ Start  :*\n\n")
+            res.message("   1️⃣ *Start :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradetwo-registered"}})
             users.update_one(
@@ -500,7 +500,7 @@ def reply():
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             huraymsg = res.message("You are now registered 🎉✨")
             huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
-            res.message("   1️⃣ Start  :*\n\n")
+            res.message("   1️⃣ *Start :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradethree-registered"}})
             users.update_one(
@@ -579,7 +579,7 @@ def reply():
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             huraymsg = res.message("You are now registered 🎉✨")
             huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
-            res.message("   1️⃣ Start  :*\n\n")
+            res.message("   1️⃣ *Start :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradefour-registered"}})
             users.update_one(
@@ -657,7 +657,7 @@ def reply():
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             huraymsg = res.message("You are now registered 🎉✨")
             huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
-            res.message("   1️⃣ Start  :*\n\n")
+            res.message("   1️⃣ *Start :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradefive-registered"}})
             users.update_one(
@@ -736,7 +736,7 @@ def reply():
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             huraymsg = res.message("You are now registered 🎉✨")
             huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
-            res.message("   1️⃣ Start  :*\n\n")
+            res.message("   1️⃣ *Start :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradesix-registered"}})
             users.update_one(
@@ -814,7 +814,7 @@ def reply():
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             huraymsg = res.message("You are now registered 🎉✨")
             huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
-            res.message("   1️⃣ Start  :*\n\n")
+            startmsg = res.message("   1️⃣ *Start :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "gradeseven-registered"}})
             users.update_one(
@@ -936,8 +936,8 @@ def reply():
             return str(res)
 
         if option == 0:
-            res.message("   📜 *ECD :*")
-            res.message("Please enter your address to confirm the order")
+            res.message("   📜 *MAIN MENU :*")
+            res.message(" 1️⃣ Register \n 2️⃣ Login \n 3️⃣ Demo \n 4️⃣ Help  \n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "primary-registration"}})
         elif option == 1:
@@ -975,7 +975,7 @@ def reply():
 
             # Help Status and options
 
-    elif user["status"] == "secondary-registration":
+    elif user["status"] == "help":
         try:
             option = int(text)
         except:
@@ -984,39 +984,34 @@ def reply():
 
         if option == 0:
             res.message("   📜 *MAIN MENU :*")
-            res.message(" 1️⃣ Register \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ Help  \n")
+            res.message("  1️⃣ Register \n 2️⃣ Login \n 3️⃣ Demo \n 4️⃣ Help  \n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
         elif option == 1:
             res.message("   📜 *FORM 1 :*")
             res.message("Please enter your address to confirm the order")
             users.update_one(
-                {"number": number}, {"$set": {"status": "primary-registration"}})
+                {"number": number}, {"$set": {"status": "help-enlish"}})
         elif option == 2:
             res.message("   📜 *FORM 2 :*")
             res.message("Please enter your address to confirm the order")
             users.update_one(
-                {"number": number}, {"$set": {"status": "secondary-registration"}})
+                {"number": number}, {"$set": {"status": "help-shona"}})
         elif option == 3:
             res.message("   📜 *FORM 3 :*")
             res.message("Please enter your address to confirm the order")
             users.update_one(
-                {"number": number}, {"$set": {"status": "course-registration"}})
+                {"number": number}, {"$set": {"status": "help-ndebele"}})
         elif option == 4:
             res.message("   📜 *FORM 4 :*")
             res.message("Please enter your address to confirm the order")
             users.update_one(
-                {"number": number}, {"$set": {"status": "about"}})
+                {"number": number}, {"$set": {"status": "contact"}})
         elif option == 5:
             res.message("   📜 *FORM 5 :*")
             res.message("Please enter your address to confirm the order")
             users.update_one(
-                {"number": number}, {"$set": {"status": "help"}})
-        elif option == 6:
-            res.message("   📜 *FORM 6 :*")
-            res.message("Please enter your address to confirm the order")
-            users.update_one(
-                {"number": number}, {"$set": {"status": "about"}})
+                {"number": number}, {"$set": {"status": "help-adress"}})
         else:
             res.message("Please enter a valid response")
 
@@ -1074,6 +1069,27 @@ def reply():
             {"number": number}, {"$set": {"status": "main"}})
 
 
+            # Login Status
+
+    elif user["status"] == "login":
+        try:
+            bool (userpaid) == True
+            fname = user["firstname"]
+            level = user["registration"]
+        except:
+            res.message("It Appears you haven't paid yet..\n\n Contact Admin if you need help")
+            res.message("  1️⃣ Register \n 2️⃣ Login \n 3️⃣ Demo \n 4️⃣ Help  \n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+        if user["password"] == text:
+            res.message(f"Hello {fname}, Happy Learning.\nYou can choose from one of the options below: "
+                    "\n\n*Type*\n\n 1️⃣ To *contact* us \n 2️⃣ To *order* snacks \n 3️⃣ To know our *working hours* \n 4️⃣ "
+                    "To get our *address*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": f"{level}"}})
+        else:
+            res.message("Wrong Password..\n\n Try again")
+
             # Freemium User Status
 
     elif userpaid["status"] == "loginfree":
@@ -1091,7 +1107,7 @@ def reply():
 
             # Premium User Status
 
-    elif userpaid["status"] == "login":
+    elif userpaid["status"] == "loginpaid":
         fname = user["firstname"]
         if text == (userpaid["password"]):
             level = user["registration"]
