@@ -1071,9 +1071,11 @@ def reply():
             users.update_one(
             {"number": number}, {"$set": {"status": "main"}})
         elif user["subscription"] == "none":
-            res.message("It looks like you're not registered")
+            res.message("It looks like you're not registered\n\n You are now being taken to Registration mode")
+            res.message("   📝 *YOU ARE NOW IN REGISTRATION MODE :*")
+            res.message("1️⃣ Primary Education \n\n2️⃣ secondary Education \n\n3️⃣ Courses\n\n4️⃣ About Us \n\n5️⃣ Help \n\n0️⃣ Main Menu")
             users.update_one(
-            {"number": number}, {"$set": {"status": "main"}})
+                {"number": number}, {"$set": {"status": "registration"}})
 
 
             # Login Status
