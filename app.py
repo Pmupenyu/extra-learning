@@ -48,7 +48,7 @@ def reply():
     number = number.replace("whatsapp:", "")[:-2]
     res = MessagingResponse()
     user = users.find_one({"number": number})
-    usersub = users.find_one({"subscription": subscription})
+    #usersub = users.find_one({"subscription": subscription})
     #fname = user["firstname"]
     #sname = user["lastname"]
     #fullname = fname + sname
