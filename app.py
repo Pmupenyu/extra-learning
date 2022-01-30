@@ -1056,13 +1056,14 @@ def reply():
         except:
             res.message("Please enter a valid response")
             return str(res)
-        fname = user["firstname"]
         if user["subscription"] == "freemium":
+            fname = user["firstname"]
             res.message(f"👋🏼 Hello *{fname}* you're a *_freemium_* user you will have limited content")
             res.message("💻 Enter your _password_ to continue...")
             users.update_one(
             {"number": number}, {"$set": {"status": "loginfree"}})
         elif user["subscription"] == "premium":
+            fname = user["firstname"]
             res.message(f"👋🏼 Hello *{fname}* You're a Premium user 🥇")
             users.update_one(
             {"number": number}, {"$set": {"status": "main"}})
