@@ -1050,8 +1050,7 @@ def reply():
             # Login Checking Point
     elif user["status"] == "loginpointer":
         try:
-            dnumber = ()
-            userfree.insert_one({"number": number, "day_number": dnumber, "address": text, "access_time": datetime.now()})
+            option = int(text)
         except:
             res.message("Please enter a valid response")
             return str(res)
