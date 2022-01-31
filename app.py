@@ -1052,7 +1052,7 @@ def reply():
         fname = user["firstname"]
         if psw == user["password"]:
             level = user["registration"]
-            res.message(f"Hello {fname}, and Happy Learning.\nYou can choose from one of the options below: "
+            res.message(f"Hello *{fname}*, and Happy Learning.\nYou can choose from one of the options below: "
                     "\n\n*Type*\n\n 1️⃣ To pay for *Premium* \n\n 2️⃣ For free 1 Week _Learning_ \n\n 3️⃣ To Learn how it _works_ \n\n 4️⃣ "
                     "To get _assistance_")
             users.update_one(
