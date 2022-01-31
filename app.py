@@ -1103,11 +1103,11 @@ def reply():
             # Freemium User Status
 
     elif user["status"] == "loginfree":
-        try:
-            psw = (text)
-        except:
-            res.message("Please enter a valid password")
-            return str(res)
+        #try:
+        psw = text
+        #except:
+            #res.message("Please enter a valid password")
+            #return str(res)
         fname = user["firstname"]
         if psw == user["password"]:
             level = user["registration"]
