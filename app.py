@@ -65,7 +65,7 @@ def reply():
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp"
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
-                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Login \n 3️⃣ Demo \n 4️⃣ Help  \n")
+                    "\n\n*Type*\n\n 1️⃣ Register \n\n 2️⃣ Login \n\n 3️⃣ Demo \n\n 4️⃣ Help  \n")
         mmsg.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
         users.insert_one({"number": number, "status": "main", "messages": []})
         users.update_one(
@@ -364,7 +364,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
             users.update_one(
-                {"number": number}, {"$set": {"registration": "gradeone"}})
+                {"number": number}, {"$set": {"registration": "gradeone","subscription": "freemium"}})
 
             # GRADE 2 Registering Status (1st Name)
 
@@ -442,7 +442,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
             users.update_one(
-                {"number": number}, {"$set": {"registration": "gradetwo"}})
+                {"number": number}, {"$set": {"registration": "gradetwo","subscription": "freemium"}})
 
             # GRADE 3 Registering Status (1st Name)
 
@@ -520,7 +520,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
             users.update_one(
-                {"number": number}, {"$set": {"registration": "gradethree"}})
+                {"number": number}, {"$set": {"registration": "gradethree","subscription": "freemium"}})
 
 
             # GRADE 4 Registering Status (1st Name)
@@ -599,7 +599,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
             users.update_one(
-                {"number": number}, {"$set": {"registration": "gradefour"}})
+                {"number": number}, {"$set": {"registration": "gradefour","subscription": "freemium"}})
 
             # GRADE 5 Registering Status (1st Name)
 
@@ -677,7 +677,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
             users.update_one(
-                {"number": number}, {"$set": {"registration": "gradefive"}})
+                {"number": number}, {"$set": {"registration": "gradefive","subscription": "freemium"}})
 
 
             # GRADE 6 Registering Status (1st Name)
@@ -756,7 +756,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
             users.update_one(
-                {"number": number}, {"$set": {"registration": "gradesix"}})
+                {"number": number}, {"$set": {"registration": "gradesix","subscription": "freemium"}})
 
             # GRADE 7 Registering Status (1st Name)
 
@@ -834,7 +834,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
             users.update_one(
-                {"number": number}, {"$set": {"registration": "gradeseven"}})
+                {"number": number}, {"$set": {"registration": "gradeseven","subscription": "freemium"}})
 
 
             # Secondary Registering Status and options
@@ -1103,11 +1103,7 @@ def reply():
             # Freemium User Status
 
     elif user["status"] == "loginfree":
-        #try:
         psw = text
-        #except:
-            #res.message("Please enter a valid password")
-            #return str(res)
         fname = user["firstname"]
         if psw == user["password"]:
             level = user["registration"]
