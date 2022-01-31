@@ -1015,41 +1015,7 @@ def reply():
         else:
             res.message("Please enter a valid response")
 
-            # Already Accessed Platform but not registered AANR
 
-    elif user["status"] == "aanr":
-        res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
-                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
-                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
-                "\n\nTo get Started Respond with the option of your choice using numbers:"
-                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Login \n 3️⃣ Demo \n 4️⃣ "
-                    "Help  \n")
-        users.update_one(
-            {"number": number}, {"$set": {"status": "main"}})
-
-            #Platform Commands
-
-    elif text == "Extra Learning":
-        res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
-                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
-                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
-                "\n\nTo get Started Respond with the option of your choice using numbers:"
-                    "\n\n*Type*\n\n 1️⃣ Login \n 2️⃣ Details \n 3️⃣ Demo \n 4️⃣ "
-                    "Help  \nTesting Commands")
-        users.update_one(
-            {"number": number}, {"$set": {"status": "main"}})
-
-            #Content Placeholder
-
-    elif user["status"] == "content":
-        res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
-                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
-                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
-                "\n\nTo get Started Respond with the option of your choice using numbers:"
-                    "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Login \n 3️⃣ Demo \n 4️⃣ "
-                    "Help  \n")
-        users.update_one(
-            {"number": number}, {"$set": {"status": "main"}})
 
             # Login Checking Point
     elif user["status"] == "loginpointer":
@@ -1079,26 +1045,6 @@ def reply():
                 {"number": number}, {"$set": {"status": "registration"}})
 
 
-            # Login Status
-
-    elif user["status"] == "login":
-        try:
-            bool (userpaid) == True
-            fname = user["firstname"]
-            level = user["registration"]
-        except:
-            res.message("It Appears you haven't paid yet..\n\n Contact Admin if you need help")
-            res.message("  1️⃣ Register \n 2️⃣ Login \n 3️⃣ Demo \n 4️⃣ Help  \n")
-            users.update_one(
-                {"number": number}, {"$set": {"status": "main"}})
-        if user["password"] == text:
-            res.message(f"Hello {fname}, Happy Learning.\nYou can choose from one of the options below: "
-                    "\n\n*Type*\n\n 1️⃣ To *contact* us \n 2️⃣ To *order* snacks \n 3️⃣ To know our *working hours* \n 4️⃣ "
-                    "To get our *address*")
-            users.update_one(
-                {"number": number}, {"$set": {"status": f"{level}"}})
-        else:
-            res.message("Wrong Password..\n\n Try again")
 
             # Freemium User Status
 
@@ -1118,13 +1064,14 @@ def reply():
 
             # Premium User Status
 
-    elif userpaid["status"] == "loginpaid":
+    elif user["status"] == "loginpaid":
+        psw = text
         fname = user["firstname"]
-        if text == (userpaid["password"]):
+        if psw == user["password"]:
             level = user["registration"]
-            res.message(f"Hello {fname}, Happy Learning.\nYou can choose from one of the options below: "
-                    "\n\n*Type*\n\n 1️⃣ To *contact* us \n 2️⃣ To *order* snacks \n 3️⃣ To know our *working hours* \n 4️⃣ "
-                    "To get our *address*")
+            res.message(f"Hello {fname}, and Happy Learning.\nYou can choose from one of the options below: "
+                    "\n\n*Type*\n\n 1️⃣ To Start Learning \n 2️⃣ For Balance Enquiry \n 3️⃣ To Learn how it *works* \n 4️⃣ "
+                    "To get *assistance*")
             users.update_one(
                 {"number": number}, {"$set": {"status": f"{level}"}})
         else:
