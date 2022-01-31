@@ -1107,9 +1107,9 @@ def reply():
         fname = user["firstname"]
         if psw == user["password"]:
             level = user["registration"]
-            res.message(f"Hello {fname}, Happy Learning.\nYou can choose from one of the options below: "
-                    "\n\n*Type*\n\n 1️⃣ To *contact* us \n 2️⃣ To *order* snacks \n 3️⃣ To know our *working hours* \n 4️⃣ "
-                    "To get our *address*")
+            res.message(f"Hello {fname}, and Happy Learning.\nYou can choose from one of the options below: "
+                    "\n\n*Type*\n\n 1️⃣ To pay for *Premium* \n 2️⃣ For free 1 Week Learning \n 3️⃣ To Learn how it *works* \n 4️⃣ "
+                    "To get *assistance*")
             users.update_one(
                 {"number": number}, {"$set": {"status": f"{level}"}})
         else:
