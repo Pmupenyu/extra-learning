@@ -1060,12 +1060,11 @@ def reply():
             res.message("Please enter a valid response")
             return str(res)
         if user["subscription"] == "freemium":
-            level = user["registration"]
             fname = user["firstname"]
             res.message(f"👋🏼 Hello *{fname}* you're a *_freemium_* user you will have limited content")
             res.message("💻 Enter your _password_ to continue...")
             users.update_one(
-            {"number": number}, {"$set": {"status": f"{level}"}})
+            {"number": number}, {"$set": {"status": "loginfree"}})
         elif user["subscription"] == "premium":
             fname = user["firstname"]
             res.message(f"👋🏼 Hello *{fname}* You're a Premium user 🥇")
@@ -1103,10 +1102,16 @@ def reply():
 
             # Freemium User Status
 
-    elif userpaid["status"] == "loginfree":
-        pw = user["password"]
+    elif user["status"] == "loginfree":
+        try:
+            pw = int,str(text)
+            psw = pw
+            #psw == user["password"]
+        except:
+            res.message("Please enter a valid password")
+            return str(res)
         fname = user["firstname"]
-        if text == pw:
+        if psw == user["password"]:
             level = user["registration"]
             res.message(f"Hello {fname}, Happy Learning.\nYou can choose from one of the options below: "
                     "\n\n*Type*\n\n 1️⃣ To *contact* us \n 2️⃣ To *order* snacks \n 3️⃣ To know our *working hours* \n 4️⃣ "
