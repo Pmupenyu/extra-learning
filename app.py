@@ -286,7 +286,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
             users.update_one(
-                {"number": number}, {"$set": {"registration": "ecd", "subscription": "freemium"}})
+                {"number": number}, {"$set": {"registration": "ecd", "subscription": "freemium","day_number":"0","month_number":"0","week_number":"0"}})
 
             # GRADE 1 Registering Status (1st Name)
 
@@ -364,7 +364,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
             users.update_one(
-                {"number": number}, {"$set": {"registration": "gradeone","subscription": "freemium"}})
+                {"number": number}, {"$set": {"registration": "gradeone","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0"}})
 
             # GRADE 2 Registering Status (1st Name)
 
@@ -520,7 +520,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
             users.update_one(
-                {"number": number}, {"$set": {"registration": "gradethree","subscription": "freemium"}})
+                {"number": number}, {"$set": {"registration": "gradethree","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0"}})
 
 
             # GRADE 4 Registering Status (1st Name)
@@ -599,7 +599,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
             users.update_one(
-                {"number": number}, {"$set": {"registration": "gradefour","subscription": "freemium"}})
+                {"number": number}, {"$set": {"registration": "gradefour","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0"}})
 
             # GRADE 5 Registering Status (1st Name)
 
@@ -677,7 +677,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
             users.update_one(
-                {"number": number}, {"$set": {"registration": "gradefive","subscription": "freemium"}})
+                {"number": number}, {"$set": {"registration": "gradefive","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0"}})
 
 
             # GRADE 6 Registering Status (1st Name)
@@ -756,7 +756,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
             users.update_one(
-                {"number": number}, {"$set": {"registration": "gradesix","subscription": "freemium"}})
+                {"number": number}, {"$set": {"registration": "gradesix","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0"}})
 
             # GRADE 7 Registering Status (1st Name)
 
@@ -834,7 +834,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
             users.update_one(
-                {"number": number}, {"$set": {"registration": "gradeseven","subscription": "freemium"}})
+                {"number": number}, {"$set": {"registration": "gradeseven","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0"}})
 
 
             # Secondary Registering Status and options
