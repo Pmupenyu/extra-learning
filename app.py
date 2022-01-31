@@ -54,8 +54,8 @@ def reply():
     #fullname = fname + sname
     userfree = freemium_users.find_one({"number": number})
     userpaid = premium_users.find_one({"number": number})
-    subs = user["subscription"]
-    usersub = users.find_one({"subscription": f"subs"})
+    #subs = user["subscription"]
+   # usersub = users.find_one({"subscription": f"subs"})
 
 
     # Main Checking user is in db
