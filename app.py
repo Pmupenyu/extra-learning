@@ -1042,13 +1042,9 @@ def reply():
             #Content Placeholder
 
     elif user["status"] == "content":
-        pw = user["password"]
-        try:
-            pssword = (text)
-        except:
-            res.message("Please enter valid password")
-        if pssword == user["password"]:
-            res.message("Congrats your Password works and accepted"
+        res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
                     "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Login \n 3️⃣ Demo \n 4️⃣ "
                     "Help  \n")
@@ -1068,13 +1064,13 @@ def reply():
             res.message(f"👋🏼 Hello *{fname}* you're a *_freemium_* user you will have limited content")
             res.message("💻 Enter your _password_ to continue...")
             users.update_one(
-            {"number": number}, {"$set": {"status": "content"}})
+            {"number": number}, {"$set": {"status": "loginfree"}})
         elif user["subscription"] == "premium":
             fname = user["firstname"]
             res.message(f"👋🏼 Hello *{fname}* You're a Premium user 🥇")
             res.message("💻 Enter your _password_ to continue...")
             users.update_one(
-            {"number": number}, {"$set": {"status": "content"}})
+            {"number": number}, {"$set": {"status": "main"}})
         elif user["subscription"] == "none":
             res.message("It looks like you're not registered\n\n You are now being taken to Registration mode")
             res.message("   📝 *YOU ARE NOW IN REGISTRATION MODE :*")
