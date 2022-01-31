@@ -884,6 +884,483 @@ def reply():
         else:
             res.message("Please enter a valid response")
 
+
+            # FORM 1 Registering Status (1st Name)
+
+    elif user["status"] == "formone-first-name":
+            res.message("   📜 *FORM 1 Registration :*")
+            res.message("\n Enter *Last Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formone-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
+            # FORM 1 Registering Status (Surname)
+
+    elif user["status"] == "formone-surname-name":
+            res.message("   📜 *FORM 1 Registration :*")
+            res.message("Enter *Guardian Full Name*")
+            users.update_one(
+                {"number": number},{"$set": {"status": "formone-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+
+            # FORM 1 Registering Status (Guardian)
+
+    elif user["status"] == "formone-guardian-name":
+            res.message("   📜 *FORM 1 Registration :*")
+            res.message("Enter your address")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formone-address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
+
+            # FORM 1 Registering Status (Address)
+
+    elif user["status"] == "formone-address":
+            res.message("   📜 *FORM 1 Registration :*")
+            res.message("Enter *contact details*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formone-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+            # FORM 1 Registering Status (contact)
+
+    elif user["status"] == "formone-contact-reg":
+            res.message("   📜 *FORM 1 Registration :*")
+            res.message("Now Enter your access *Password* that you can remember")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formone-password"}})
+            users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+
+            # FORM 1 Registering Status (password)
+
+    elif user["status"] == "formone-password":
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            startmsg = res.message("   1️⃣ *Start :*\n\n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formone-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+
+
+            # FORM 1 Registering Status (Registered)
+
+    elif user["status"] == "formone-registered":
+
+            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n\n 2️⃣ Login \n\n 3️⃣ Demo \n\n 4️⃣ Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "formone","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0","sub_duration":"","order_date":""}})
+
+
+            # FORM 2 Registering Status (1st Name)
+
+    elif user["status"] == "formtwo-first-name":
+            res.message("   📜 *FORM 2 Registration :*")
+            res.message("\n Enter *Last Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formtwo-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
+            # FORM 2 Registering Status (Surname)
+
+    elif user["status"] == "formtwo-surname-name":
+            res.message("   📜 *FORM 2 Registration :*")
+            res.message("Enter *Guardian Full Name*")
+            users.update_one(
+                {"number": number},{"$set": {"status": "formtwo-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+
+            # FORM 2 Registering Status (Guardian)
+
+    elif user["status"] == "formtwo-guardian-name":
+            res.message("   📜 *FORM 2 Registration :*")
+            res.message("Enter your address")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formtwo-address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
+
+            # FORM 2 Registering Status (Address)
+
+    elif user["status"] == "formtwo-address":
+            res.message("   📜 *FORM 2 Registration :*")
+            res.message("Enter *contact details*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formtwo-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+            # FORM 2 Registering Status (contact)
+
+    elif user["status"] == "formtwo-contact-reg":
+            res.message("   📜 *FORM 2 Registration :*")
+            res.message("Now Enter your access *Password* that you can remember")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formtwo-password"}})
+            users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+
+            # FORM 2 Registering Status (password)
+
+    elif user["status"] == "formtwo-password":
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            startmsg = res.message("   1️⃣ *Start :*\n\n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formtwo-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+
+
+            # FORM 2 Registering Status (Registered)
+
+    elif user["status"] == "formtwo-registered":
+
+            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n\n 2️⃣ Login \n\n 3️⃣ Demo \n\n 4️⃣ Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "formtwo","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0","sub_duration":"","order_date":""}})
+
+
+            # FORM 3 Registering Status (1st Name)
+
+    elif user["status"] == "formthree-first-name":
+            res.message("   📜 *FORM 3 Registration :*")
+            res.message("\n Enter *Last Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formthree-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
+            # FORM 3 Registering Status (Surname)
+
+    elif user["status"] == "formthree-surname-name":
+            res.message("   📜 *FORM 3 Registration :*")
+            res.message("Enter *Guardian Full Name*")
+            users.update_one(
+                {"number": number},{"$set": {"status": "formthree-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+
+            # FORM 3 Registering Status (Guardian)
+
+    elif user["status"] == "formthree-guardian-name":
+            res.message("   📜 *FORM 3 Registration :*")
+            res.message("Enter your address")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formthree-address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
+
+            # FORM 3 Registering Status (Address)
+
+    elif user["status"] == "formthree-address":
+            res.message("   📜 *FORM 3 Registration :*")
+            res.message("Enter *contact details*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formthree-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+            # FORM 3 Registering Status (contact)
+
+    elif user["status"] == "formthree-contact-reg":
+            res.message("   📜 *FORM 3 Registration :*")
+            res.message("Now Enter your access *Password* that you can remember")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formthree-password"}})
+            users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+
+            # FORM 3 Registering Status (password)
+
+    elif user["status"] == "formthree-password":
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            startmsg = res.message("   1️⃣ *Start :*\n\n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formthree-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+
+
+            # FORM 3 Registering Status (Registered)
+
+    elif user["status"] == "formthree-registered":
+
+            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n\n 2️⃣ Login \n\n 3️⃣ Demo \n\n 4️⃣ Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "formthree","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0","sub_duration":"","order_date":""}})
+
+
+            # FORM 4 Registering Status (1st Name)
+
+    elif user["status"] == "formfour-first-name":
+            res.message("   📜 *FORM 4 Registration :*")
+            res.message("\n Enter *Last Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formfour-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
+            # FORM 4 Registering Status (Surname)
+
+    elif user["status"] == "formfour-surname-name":
+            res.message("   📜 *FORM 4 Registration :*")
+            res.message("Enter *Guardian Full Name*")
+            users.update_one(
+                {"number": number},{"$set": {"status": "formfour-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+
+            # FORM 4 Registering Status (Guardian)
+
+    elif user["status"] == "formfour-guardian-name":
+            res.message("   📜 *FORM 4 Registration :*")
+            res.message("Enter your address")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formfour-address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
+
+            # FORM 4 Registering Status (Address)
+
+    elif user["status"] == "formfour-address":
+            res.message("   📜 *FORM 4 Registration :*")
+            res.message("Enter *contact details*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formfour-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+            # FORM 4 Registering Status (contact)
+
+    elif user["status"] == "formfour-contact-reg":
+            res.message("   📜 *FORM 4 Registration :*")
+            res.message("Now Enter your access *Password* that you can remember")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formfour-password"}})
+            users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+
+            # FORM 4 Registering Status (password)
+
+    elif user["status"] == "formfour-password":
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            startmsg = res.message("   1️⃣ *Start :*\n\n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formfour-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+
+
+            # FORM 4 Registering Status (Registered)
+
+    elif user["status"] == "formfour-registered":
+
+            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n\n 2️⃣ Login \n\n 3️⃣ Demo \n\n 4️⃣ Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "formfour","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0","sub_duration":"","order_date":""}})
+
+
+            # FORM 5 Registering Status (1st Name)
+
+    elif user["status"] == "formfive-first-name":
+            res.message("   📜 *FORM 5 Registration :*")
+            res.message("\n Enter *Last Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formfive-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
+            # FORM 5 Registering Status (Surname)
+
+    elif user["status"] == "formfive-surname-name":
+            res.message("   📜 *FORM 5 Registration :*")
+            res.message("Enter *Guardian Full Name*")
+            users.update_one(
+                {"number": number},{"$set": {"status": "formfive-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+
+            # FORM 5 Registering Status (Guardian)
+
+    elif user["status"] == "formfive-guardian-name":
+            res.message("   📜 *FORM 5 Registration :*")
+            res.message("Enter your address")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formfive-address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
+
+            # FORM 5 Registering Status (Address)
+
+    elif user["status"] == "formfive-address":
+            res.message("   📜 *FORM 5 Registration :*")
+            res.message("Enter *contact details*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formfive-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+            # FORM 5 Registering Status (contact)
+
+    elif user["status"] == "formfive-contact-reg":
+            res.message("   📜 *FORM 5 Registration :*")
+            res.message("Now Enter your access *Password* that you can remember")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formfive-password"}})
+            users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+
+            # FORM 5 Registering Status (password)
+
+    elif user["status"] == "formfive-password":
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            startmsg = res.message("   1️⃣ *Start :*\n\n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formfive-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+
+
+            # FORM 5 Registering Status (Registered)
+
+    elif user["status"] == "formfive-registered":
+
+            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n\n 2️⃣ Login \n\n 3️⃣ Demo \n\n 4️⃣ Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "formfive","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0","sub_duration":"","order_date":""}})
+
+
+            # FORM 6 Registering Status (1st Name)
+
+    elif user["status"] == "formsix-first-name":
+            res.message("   📜 *FORM 6 Registration :*")
+            res.message("\n Enter *Last Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formsix-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
+            # FORM 6 Registering Status (Surname)
+
+    elif user["status"] == "formsix-surname-name":
+            res.message("   📜 *FORM 6 Registration :*")
+            res.message("Enter *Guardian Full Name*")
+            users.update_one(
+                {"number": number},{"$set": {"status": "formsix-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+
+            # FORM 6 Registering Status (Guardian)
+
+    elif user["status"] == "formsix-guardian-name":
+            res.message("   📜 *FORM 6 Registration :*")
+            res.message("Enter your address")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formsix-address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
+
+            # FORM 6 Registering Status (Address)
+
+    elif user["status"] == "formsix-address":
+            res.message("   📜 *FORM 6 Registration :*")
+            res.message("Enter *contact details*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formsix-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+            # FORM 6 Registering Status (contact)
+
+    elif user["status"] == "formsix-contact-reg":
+            res.message("   📜 *FORM 6 Registration :*")
+            res.message("Now Enter your access *Password* that you can remember")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formsix-password"}})
+            users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+
+            # FORM 6 Registering Status (password)
+
+    elif user["status"] == "formsix-password":
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            startmsg = res.message("   1️⃣ *Start :*\n\n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "formsix-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+
+
+            # FORM 6 Registering Status (Registered)
+
+    elif user["status"] == "formsix-registered":
+
+            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n\n 2️⃣ Login \n\n 3️⃣ Demo \n\n 4️⃣ Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "formsix","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0","sub_duration":"","order_date":""}})
+
+
+
+
             # Courses Registering Status and options
 
     elif user["status"] == "course-registration":
@@ -928,7 +1405,7 @@ def reply():
 
             # About Status and options
 
-    elif user["status"] == "secondary-registration":
+    elif user["status"] == "about":
         try:
             option = int(text)
         except:
@@ -1058,7 +1535,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
         else:
-            res.message("Wrong Password..\n\n Try again")
+            res.message("Wrong Password..😒\n\n Try again")
 
 
             # Premium User Status
@@ -1074,7 +1551,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": f"{level}"}})
         else:
-            res.message("Wrong Password..\n\n Try again")
+            res.message("Wrong Password..😒\n\n Try again")
 
 
             # Update Root DB
