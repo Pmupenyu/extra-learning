@@ -1104,9 +1104,7 @@ def reply():
 
     elif user["status"] == "loginfree":
         try:
-            pw = int,str(text)
-            psw = pw
-            #psw == user["password"]
+            psw = int,str(text)
         except:
             res.message("Please enter a valid password")
             return str(res)
