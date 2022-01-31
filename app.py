@@ -1047,7 +1047,7 @@ def reply():
             pssword = (text)
         except:
             res.message("Please enter valid password")
-        if user["password"] == pssword:
+        if pssword == user["password"]:
             res.message("Congrats your Password works and accepted"
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
                     "\n\n*Type*\n\n 1️⃣ Register \n 2️⃣ Login \n 3️⃣ Demo \n 4️⃣ "
