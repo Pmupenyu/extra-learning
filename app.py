@@ -139,8 +139,8 @@ def reply():
                 {"number": number}, {"$set": {"status": "secondary-registration"}})
         elif option == 3:
             res.message("   📜 *COURSES SECTION :*")
-            res.message("*_Select level to Register_* \n\n 0️⃣ Programming \n 1️⃣ VID \n 2️⃣ Web Designing \n 3️⃣ Modern Fashion and Fabrics \n 4️⃣ Nurse Aide "
-                        " \n 5️⃣ Auto Mechanics \n 6️⃣ Electronics \n 7️⃣ Cyber Security")
+            res.message("*_Select level to Register_* \n\n 0️⃣ Main Menu \n 1️⃣ VID \n 2️⃣ Web Designing \n 3️⃣ Mushroom Farming \n 4️⃣ Modern Fashion "
+                        " \n 5️⃣ Nurse Aide \n 6️⃣ Auto Mechanics \n 7️⃣ Make Up\n  8️⃣ Hair Dressing\n 9️⃣ Modern Decorations")
             users.update_one(
                 {"number": number}, {"$set": {"status": "course-registration"}})
         elif option == 4:
@@ -1369,8 +1369,12 @@ def reply():
         except:
             res.message("Please enter a valid response")
             return str(res)
-
-        if option == 1:
+        if option == 0:
+            res.message("   📜 *MAIN MENU :*")
+            res.message(" 1️⃣ Register \n 2️⃣ Login \n 3️⃣ Demo \n 4️⃣ Help  \n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+        elif option == 1:
             res.message("   📜 *VID Registration :*")
             res.message("Please enter *First Name*")
             users.update_one(
