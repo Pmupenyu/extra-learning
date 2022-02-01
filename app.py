@@ -1381,7 +1381,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "wd-first-name"}})
         elif option == 3:
-            res.message("   📜 *Web Development Registration :*")
+            res.message("   📜 *Mushroom Farming Registration :*")
             res.message("Please enter *First Name*")
             users.update_one(
                 {"number": number}, {"$set": {"status": "wdd-first-name"}})
@@ -1391,15 +1391,30 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "mff-first-name"}})
         elif option == 5:
-            res.message("   📜 *Nurse Aid Registration :*")
+            res.message("   📜 *Nurse Aide Registration :*")
             res.message("Please enter *First Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "naid-first-name"}})
+                {"number": number}, {"$set": {"status": "nurse-aide-first-name"}})
         elif option == 6:
-            res.message("   📜 *Auto Mechanic Registration :*")
+            res.message("   📜 *Auto Mechanics Registration :*")
             res.message("Please enter *First Name*")
             users.update_one(
                 {"number": number}, {"$set": {"status": "amm-first-name"}})
+        elif option == 7:
+            res.message("   📜 *Make Up Registration :*")
+            res.message("Please enter *First Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "makeup-first-name"}})
+        elif option == 8:
+            res.message("   📜 *Hair Dressing Registration :*")
+            res.message("Please enter *First Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "hairdressing-first-name"}})
+        elif option == 9:
+            res.message("   📜 *Modern Decorations Registration :*")
+            res.message("Please enter *First Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "deco-first-name"}})
         else:
             res.message("Please enter a valid response")
 
@@ -1482,6 +1497,320 @@ def reply():
                 {"number": number}, {"$set": {"registration": "vid","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0","sub_duration":"","order_date":""}})
 
 
+            # Web Designing  Registering Status (1st Name)
+
+    elif user["status"] == "wd-first-name":
+            res.message("   📜 *Web Designing  Registration :*")
+            res.message("\n Enter *Last Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "wd-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
+            # Web Designing  Registering Status (Surname)
+
+    elif user["status"] == "wd-surname-name":
+            res.message("   📜 *Web Designing  Registration :*")
+            res.message("Enter *Guardian Full Name*")
+            users.update_one(
+                {"number": number},{"$set": {"status": "wd-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+
+            # Web Designing  Registering Status (Guardian)
+
+    elif user["status"] == "wd-guardian-name":
+            res.message("   📜 *Web Designing  Registration :*")
+            res.message("Enter your address")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "wd-address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
+
+            # Web Designing  Registering Status (Address)
+
+    elif user["status"] == "wd-address":
+            res.message("   📜 *Web Designing  Registration :*")
+            res.message("Enter *contact details*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "wd-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+            # Web Designing  Registering Status (contact)
+
+    elif user["status"] == "wd-contact-reg":
+            res.message("   📜 *Web Designing  Registration :*")
+            res.message("Now Enter your access *Password* that you can remember")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "wd-password"}})
+            users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+
+            # Web Designing  Registering Status (password)
+
+    elif user["status"] == "wd-password":
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            startmsg = res.message("   1️⃣ *Start :*\n\n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "wd-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+
+
+            # Web Designing  Registering Status (Registered)
+
+    elif user["status"] == "wd-registered":
+
+            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n\n 2️⃣ Login \n\n 3️⃣ Demo \n\n 4️⃣ Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "webdesigning","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0","sub_duration":"","order_date":""}})
+
+            # MUSHROOM FARMING Registering Status (1st Name)
+
+    elif user["status"] == "mushroom-first-name":
+            res.message("   📜 *MUSHROOM FARMING Registration :*")
+            res.message("\n Enter *Last Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "mushroom-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
+            # MUSHROOM FARMING Registering Status (Surname)
+
+    elif user["status"] == "mushroom-surname-name":
+            res.message("   📜 *MUSHROOM FARMING Registration :*")
+            res.message("Enter *Guardian Full Name*")
+            users.update_one(
+                {"number": number},{"$set": {"status": "mushroom-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+
+            # MUSHROOM FARMING Registering Status (Guardian)
+
+    elif user["status"] == "mushroom-guardian-name":
+            res.message("   📜 *MUSHROOM FARMING Registration :*")
+            res.message("Enter your address")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "mushroom-address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
+
+            # MUSHROOM FARMING Registering Status (Address)
+
+    elif user["status"] == "mushroom-address":
+            res.message("   📜 *MUSHROOM FARMING Registration :*")
+            res.message("Enter *contact details*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "mushroom-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+            # MUSHROOM FARMING Registering Status (contact)
+
+    elif user["status"] == "mushroom-contact-reg":
+            res.message("   📜 *MUSHROOM FARMING Registration :*")
+            res.message("Now Enter your access *Password* that you can remember")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "mushroom-password"}})
+            users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+
+            # MUSHROOM FARMING Registering Status (password)
+
+    elif user["status"] == "mushroom-password":
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            startmsg = res.message("   1️⃣ *Start :*\n\n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "mushroom-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+
+
+            # MUSHROOM FARMING Registering Status (Registered)
+
+    elif user["status"] == "mushroom-registered":
+
+            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n\n 2️⃣ Login \n\n 3️⃣ Demo \n\n 4️⃣ Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "mushroom","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0","sub_duration":"","order_date":""}})
+
+
+
+            # MODERN FASHION AND FABRICS Registering Status (1st Name)
+
+    elif user["status"] == "modern-fashion-first-name":
+            res.message("   📜 *MODERN FASHION AND FABRICS Registration :*")
+            res.message("\n Enter *Last Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "modern-fashion-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
+            # MODERN FASHION AND FABRICS Registering Status (Surname)
+
+    elif user["status"] == "modern-fashion-surname-name":
+            res.message("   📜 *MODERN FASHION AND FABRICS Registration :*")
+            res.message("Enter *Guardian Full Name*")
+            users.update_one(
+                {"number": number},{"$set": {"status": "modern-fashion-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+
+            # MODERN FASHION AND FABRICS Registering Status (Guardian)
+
+    elif user["status"] == "modern-fashion-guardian-name":
+            res.message("   📜 *MODERN FASHION AND FABRICS Registration :*")
+            res.message("Enter your address")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "modern-fashion-address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
+
+            # MODERN FASHION AND FABRICS Registering Status (Address)
+
+    elif user["status"] == "modern-fashion-address":
+            res.message("   📜 *MODERN FASHION AND FABRICS Registration :*")
+            res.message("Enter *contact details*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "modern-fashion-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+            # MODERN FASHION AND FABRICS Registering Status (contact)
+
+    elif user["status"] == "modern-fashion-contact-reg":
+            res.message("   📜 *MODERN FASHION AND FABRICS Registration :*")
+            res.message("Now Enter your access *Password* that you can remember")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "modern-fashion-password"}})
+            users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+
+            # MODERN FASHION AND FABRICS Registering Status (password)
+
+    elif user["status"] == "modern-fashion-password":
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            startmsg = res.message("   1️⃣ *Start :*\n\n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "modern-fashion-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+
+
+            # MODERN FASHION AND FABRICS Registering Status (Registered)
+
+    elif user["status"] == "modern-fashion-registered":
+
+            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n\n 2️⃣ Login \n\n 3️⃣ Demo \n\n 4️⃣ Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "modern-fashion","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0","sub_duration":"","order_date":""}})
+
+
+            # NURSE AIDE Registering Status (1st Name)
+
+    elif user["status"] == "nurse-aide-first-name":
+            res.message("   📜 *NURSE AIDE Registration :*")
+            res.message("\n Enter *Last Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "nurse-aide-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
+            # NURSE AIDE Registering Status (Surname)
+
+    elif user["status"] == "nurse-aide-surname-name":
+            res.message("   📜 *NURSE AIDE Registration :*")
+            res.message("Enter *Guardian Full Name*")
+            users.update_one(
+                {"number": number},{"$set": {"status": "nurse-aide-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+
+            # NURSE AIDE Registering Status (Guardian)
+
+    elif user["status"] == "nurse-aide-guardian-name":
+            res.message("   📜 *NURSE AIDE Registration :*")
+            res.message("Enter your address")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "nurse-aide-address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
+
+            # NURSE AIDE Registering Status (Address)
+
+    elif user["status"] == "nurse-aide-address":
+            res.message("   📜 *NURSE AIDE Registration :*")
+            res.message("Enter *contact details*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "nurse-aide-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+            # NURSE AIDE Registering Status (contact)
+
+    elif user["status"] == "nurse-aide-contact-reg":
+            res.message("   📜 *NURSE AIDE Registration :*")
+            res.message("Now Enter your access *Password* that you can remember")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "nurse-aide-password"}})
+            users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+
+            # NURSE AIDE Registering Status (password)
+
+    elif user["status"] == "nurse-aide-password":
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            startmsg = res.message("   1️⃣ *Start :*\n\n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "nurse-aide-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+
+
+            # NURSE AIDE Registering Status (Registered)
+
+    elif user["status"] == "nurse-aide-registered":
+
+            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n\n 2️⃣ Login \n\n 3️⃣ Demo \n\n 4️⃣ Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "nurse-aide","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0","sub_duration":"","order_date":""}})
 
 
 
