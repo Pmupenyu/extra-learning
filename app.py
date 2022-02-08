@@ -486,7 +486,7 @@ def reply():
 
             # GRADE 3 Registering Status (contact)
 
-    elif user["status"] == "gradetwo-contact-reg":
+    elif user["status"] == "gradethree-contact-reg":
             res.message("   📜 *GRADE 3 Registration :*")
             res.message("Now Enter your access *Password* that you can remember")
             users.update_one(
