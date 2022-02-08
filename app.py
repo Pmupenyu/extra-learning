@@ -186,7 +186,7 @@ def reply():
             res.message("   📜 *Grade 3 Registration :*")
             res.message("Please enter *First Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "grade-three-first-name"}})
+                {"number": number}, {"$set": {"status": "gradethree-first-name"}})
         elif option == 4:
             res.message("   📜 *Grade 4 Registration :*")
             res.message("Please enter *First Name*")
