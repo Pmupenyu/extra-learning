@@ -61,7 +61,7 @@ def reply():
     # Main Checking user is in db
 
     if bool(user) == False:
-        mmsg = res.message("Hello and Welcome to *Extra Learning* one of the best *e-learning* platform in *Zimbabwe*. "
+        mmsg = res.message("Hello and Welcome to *Home Learning* one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp"
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
@@ -119,7 +119,7 @@ def reply():
             res.message("Please enter a valid response")
             return str(res)
         if option == 0:
-            res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+            res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
@@ -277,7 +277,7 @@ def reply():
 
     elif user["status"] == "ecd-registered":
 
-            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
@@ -355,7 +355,7 @@ def reply():
 
     elif user["status"] == "gradeone-registered":
 
-            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
@@ -433,7 +433,7 @@ def reply():
 
     elif user["status"] == "gradetwo-registered":
 
-            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
@@ -511,7 +511,7 @@ def reply():
 
     elif user["status"] == "gradethree-registered":
 
-            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
@@ -590,7 +590,7 @@ def reply():
 
     elif user["status"] == "gradefour-registered":
 
-            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
@@ -668,7 +668,7 @@ def reply():
 
     elif user["status"] == "gradefive-registered":
 
-            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
@@ -747,7 +747,7 @@ def reply():
 
     elif user["status"] == "gradesix-registered":
 
-            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
@@ -825,7 +825,7 @@ def reply():
 
     elif user["status"] == "gradeseven-registered":
 
-            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
@@ -952,7 +952,7 @@ def reply():
 
     elif user["status"] == "formone-registered":
 
-            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
@@ -1031,7 +1031,7 @@ def reply():
 
     elif user["status"] == "formtwo-registered":
 
-            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
@@ -1110,7 +1110,7 @@ def reply():
 
     elif user["status"] == "formthree-registered":
 
-            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
@@ -1189,7 +1189,7 @@ def reply():
 
     elif user["status"] == "formfour-registered":
 
-            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
@@ -1268,7 +1268,7 @@ def reply():
 
     elif user["status"] == "formfive-registered":
 
-            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
@@ -1347,7 +1347,7 @@ def reply():
 
     elif user["status"] == "formsix-registered":
 
-            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
@@ -1494,7 +1494,7 @@ def reply():
 
     elif user["status"] == "vid-registered":
 
-            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
@@ -1573,7 +1573,7 @@ def reply():
 
     elif user["status"] == "wd-registered":
 
-            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
@@ -1651,7 +1651,7 @@ def reply():
 
     elif user["status"] == "mushroom-registered":
 
-            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
@@ -1731,7 +1731,7 @@ def reply():
 
     elif user["status"] == "modern-fashion-registered":
 
-            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
@@ -1810,7 +1810,7 @@ def reply():
 
     elif user["status"] == "nurse-aide-registered":
 
-            ecdgomain = res.message("*Extra Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
                 "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
                 "\n\nTo get Started Respond with the option of your choice using numbers:"
