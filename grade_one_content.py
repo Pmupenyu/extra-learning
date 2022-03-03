@@ -1,4 +1,4 @@
-def gradeoneweekone(mon,tue):
+def gradeoneweekone():
     gradeone_daythree_english = "helo"
     gradeone_daythree_maths = "helo"
     gradeone_daythree_shona = "helo"
