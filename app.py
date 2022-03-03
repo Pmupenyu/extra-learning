@@ -2,6 +2,7 @@ from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 from pymongo import MongoClient
 from datetime import datetime
+from grade_one_content import *
 
 # Database
 
@@ -48,6 +49,7 @@ def reply():
     number = number.replace("whatsapp:", "")[:-2]
     res = MessagingResponse()
     user = users.find_one({"number": number})
+    gonedone = res.message(gradeoneweekone())
     #usersub = users.find_one({"subscription": subscription})
     #fname = user["firstname"]
     #sname = user["lastname"]
@@ -56,6 +58,7 @@ def reply():
     userpaid = premium_users.find_one({"number": number})
     #subs = user["subscription"]
    # usersub = users.find_one({"subscription": f"subs"})
+
 
 
     # Main Checking user is in db
