@@ -2,7 +2,9 @@ from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 from pymongo import MongoClient
 from datetime import datetime
-from grade_one_content import *
+from grade_one_content import gradeoneweekone
+import app_text
+
 
 # Database
 
