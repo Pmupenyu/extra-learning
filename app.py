@@ -1536,6 +1536,85 @@ def reply():
                 {"number": number}, {"$set": {"status": "main"}})
             users.update_one(
                 {"number": number}, {"$set": {"registration": "vid","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0","sub_duration":"","order_date":""}})
+            
+
+            # VID Registering Status (1st Name)
+
+    elif user["status"] == "graphicd-first-name":
+            res.message("   📜 *Graphic Designing Registration :*")
+            res.message("\n Enter *Last Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "graphicd-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
+            # VID Registering Status (Surname)
+
+    elif user["status"] == "graphicd-surname-name":
+            res.message("   📜 *Graphic Designing Registration :*")
+            res.message("Enter *Guardian / Next of kin's Full Name*")
+            users.update_one(
+                {"number": number},{"$set": {"status": "graphicd-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+
+            # VID Registering Status (Guardian)
+
+    elif user["status"] == "graphicd-guardian-name":
+            res.message("   📜 *Graphic Designing Registration :*")
+            res.message("Enter your address")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "graphicd-address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
+
+            # VID Registering Status (Address)
+
+    elif user["status"] == "graphicd-address":
+            res.message("   📜 *Graphic Designing Registration :*")
+            res.message("Enter *contact details*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "graphicd-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+            # VID Registering Status (contact)
+
+    elif user["status"] == "graphicd-contact-reg":
+            res.message("   📜 *Graphic Designing Registration :*")
+            res.message("Now Enter your access *Password* that you can remember")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "graphicd-password"}})
+            users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+
+            # VID Registering Status (password)
+
+    elif user["status"] == "graphicd-password":
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            startmsg = res.message("   1️⃣ *Start :*\n\n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "graphicd-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+
+
+            # VID Registering Status (Registered)
+
+    elif user["status"] == "vid-registered":
+
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n\n 2️⃣ Login \n\n 3️⃣ Demo \n\n 4️⃣ Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "graphicd","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0","sub_duration":"","order_date":""}})
 
 
             # Web Designing  Registering Status (1st Name)
