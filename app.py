@@ -146,7 +146,7 @@ def reply():
             res.message("   📜 *COURSES SECTION :*")
             res.message("*_Select level to Register_* \n\n 0️⃣ Main Menu \n 1️⃣ VID \n 2️⃣ Web Designing \n 3️⃣ Mushroom Farming \n 4️⃣ Modern Fashion "
                         " \n 5️⃣ Nurse Aide \n 6️⃣ Auto Mechanics \n 7️⃣ Make Up\n  8️⃣ Hair Dressing\n 9️⃣ Modern Decorations\n 🔟 Small Business Management"
-                        #"\n 1️⃣1️⃣ Graphic Designing \n 1️⃣2️⃣ Crypocurrency \n 1️⃣3️⃣ More to Come"
+                        "\n 1️⃣1️⃣ Graphic Designing \n 1️⃣2️⃣ Crypocurrency \n "# 1️⃣3️⃣ More to Come"
                         )
             users.update_one(
                 {"number": number}, {"$set": {"status": "course-registration"}})
@@ -1459,72 +1459,72 @@ def reply():
         else:
             res.message("Please enter a valid response")
 
-            # VID Registering Status (1st Name)
+            # Baking Registering Status (1st Name)
 
-    elif user["status"] == "vid-first-name":
-            res.message("   📜 *VID Registration :*")
+    elif user["status"] == "baking-first-name":
+            res.message("   📜 *Baking Registration :*")
             res.message("\n Enter *Last Name*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "vid-surname-name"}})
+                {"number": number}, {"$set": {"status": "baking-surname-name"}})
             users.update_one(
                 {"number": number}, {"$set": {"firstname": text}})
     
-            # VID Registering Status (Surname)
+            # Baking Registering Status (Surname)
 
-    elif user["status"] == "vid-surname-name":
-            res.message("   📜 *VID Registration :*")
+    elif user["status"] == "baking-surname-name":
+            res.message("   📜 *Baking Registration :*")
             res.message("Enter *Guardian / Next of kin's Full Name*")
             users.update_one(
-                {"number": number},{"$set": {"status": "vid-guardian-name"}})
+                {"number": number},{"$set": {"status": "baking-guardian-name"}})
             users.update_one(
                 {"number": number}, {"$set": {"lastname": text}})
 
-            # VID Registering Status (Guardian)
+            # Baking Registering Status (Guardian)
 
-    elif user["status"] == "vid-guardian-name":
-            res.message("   📜 *VID Registration :*")
+    elif user["status"] == "baking-guardian-name":
+            res.message("   📜 *Baking Registration :*")
             res.message("Enter your address")
             users.update_one(
-                {"number": number}, {"$set": {"status": "vid-address"}})
+                {"number": number}, {"$set": {"status": "baking-address"}})
             users.update_one(
                 {"number": number}, {"$set": {"guardian": text}})
 
-            # VID Registering Status (Address)
+            # Baking Registering Status (Address)
 
-    elif user["status"] == "vid-address":
-            res.message("   📜 *VID Registration :*")
+    elif user["status"] == "baking-address":
+            res.message("   📜 *Baking Registration :*")
             res.message("Enter *contact details*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "vid-contact-reg"}})
+                {"number": number}, {"$set": {"status": "baking-contact-reg"}})
             users.update_one(
                 {"number": number}, {"$set": {"address": text}})
 
-            # VID Registering Status (contact)
+            # Baking Registering Status (contact)
 
-    elif user["status"] == "vid-contact-reg":
-            res.message("   📜 *VID Registration :*")
+    elif user["status"] == "baking-contact-reg":
+            res.message("   📜 *Baking Registration :*")
             res.message("Now Enter your access *Password* that you can remember")
             users.update_one(
-                {"number": number}, {"$set": {"status": "vid-password"}})
+                {"number": number}, {"$set": {"status": "baking-password"}})
             users.update_one(
                 {"number": number}, {"$set": {"contact": text}})
 
-            # VID Registering Status (password)
+            # Baking Registering Status (password)
 
-    elif user["status"] == "vid-password":
+    elif user["status"] == "baking-password":
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             huraymsg = res.message("You are now registered 🎉✨")
             huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
             startmsg = res.message("   1️⃣ *Start :*\n\n")
             users.update_one(
-                {"number": number}, {"$set": {"status": "vid-registered"}})
+                {"number": number}, {"$set": {"status": "baking-registered"}})
             users.update_one(
                 {"number": number}, {"$set": {"password": text}})
 
 
-            # VID Registering Status (Registered)
+            # Baking Registering Status (Registered)
 
-    elif user["status"] == "vid-registered":
+    elif user["status"] == "baking-registered":
 
             ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
@@ -1535,10 +1535,88 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "main"}})
             users.update_one(
-                {"number": number}, {"$set": {"registration": "vid","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0","sub_duration":"","order_date":""}})
+                {"number": number}, {"$set": {"registration": "baking","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0","sub_duration":"","order_date":""}})
+
+            # Cryptocurrency(Bitcoin) Registering Status (1st Name)
+
+    elif user["status"] == "crypto-first-name":
+            res.message("   📜 *Cryptocurrency(Bitcoin) Registration :*")
+            res.message("\n Enter *Last Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "crypto-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
+            # Cryptocurrency(Bitcoin) Registering Status (Surname)
+
+    elif user["status"] == "crypto-surname-name":
+            res.message("   📜 *Cryptocurrency(Bitcoin) Registration :*")
+            res.message("Enter *Guardian / Next of kin's Full Name*")
+            users.update_one(
+                {"number": number},{"$set": {"status": "crypto-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+
+            # Cryptocurrency(Bitcoin) Registering Status (Guardian)
+
+    elif user["status"] == "crypto-guardian-name":
+            res.message("   📜 *Cryptocurrency(Bitcoin) Registration :*")
+            res.message("Enter your address")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "crypto-address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
+
+            # Cryptocurrency(Bitcoin) Registering Status (Address)
+
+    elif user["status"] == "crypto-address":
+            res.message("   📜 *Cryptocurrency(Bitcoin) Registration :*")
+            res.message("Enter *contact details*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "crypto-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+            # Cryptocurrency(Bitcoin) Registering Status (contact)
+
+    elif user["status"] == "crypto-contact-reg":
+            res.message("   📜 *Cryptocurrency(Bitcoin) Registration :*")
+            res.message("Now Enter your access *Password* that you can remember")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "crypto-password"}})
+            users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+
+            # Cryptocurrency(Bitcoin) Registering Status (password)
+
+    elif user["status"] == "crypto-password":
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            startmsg = res.message("   1️⃣ *Start :*\n\n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "crypto-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+
+
+            # Cryptocurrency(Bitcoin) Registering Status (Registered)
+
+    elif user["status"] == "crypto-registered":
+
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n\n 2️⃣ Login \n\n 3️⃣ Demo \n\n 4️⃣ Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "crypto","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0","sub_duration":"","order_date":""}})
             
 
-            # VID Registering Status (1st Name)
+            # Graphic Designing Registering Status (1st Name)
 
     elif user["status"] == "graphicd-first-name":
             res.message("   📜 *Graphic Designing Registration :*")
@@ -1548,7 +1626,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"firstname": text}})
     
-            # VID Registering Status (Surname)
+            # Graphic Designing Registering Status (Surname)
 
     elif user["status"] == "graphicd-surname-name":
             res.message("   📜 *Graphic Designing Registration :*")
@@ -1558,7 +1636,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"lastname": text}})
 
-            # VID Registering Status (Guardian)
+            # Graphic Designing Registering Status (Guardian)
 
     elif user["status"] == "graphicd-guardian-name":
             res.message("   📜 *Graphic Designing Registration :*")
@@ -1568,7 +1646,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"guardian": text}})
 
-            # VID Registering Status (Address)
+            # Graphic Designing Registering Status (Address)
 
     elif user["status"] == "graphicd-address":
             res.message("   📜 *Graphic Designing Registration :*")
@@ -1578,7 +1656,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"address": text}})
 
-            # VID Registering Status (contact)
+            # Graphic Designing Registering Status (contact)
 
     elif user["status"] == "graphicd-contact-reg":
             res.message("   📜 *Graphic Designing Registration :*")
@@ -1588,7 +1666,7 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"contact": text}})
 
-            # VID Registering Status (password)
+            # Graphic Designing Registering Status (password)
 
     elif user["status"] == "graphicd-password":
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
@@ -1601,9 +1679,9 @@ def reply():
                 {"number": number}, {"$set": {"password": text}})
 
 
-            # VID Registering Status (Registered)
+            # Graphic Designing Registering Status (Registered)
 
-    elif user["status"] == "vid-registered":
+    elif user["status"] == "graphicd-registered":
 
             ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
                 "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
