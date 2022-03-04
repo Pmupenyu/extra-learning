@@ -145,7 +145,8 @@ def reply():
         elif option == 3:
             res.message("   📜 *COURSES SECTION :*")
             res.message("*_Select level to Register_* \n\n 0️⃣ Main Menu \n 1️⃣ VID \n 2️⃣ Web Designing \n 3️⃣ Mushroom Farming \n 4️⃣ Modern Fashion "
-                        " \n 5️⃣ Nurse Aide \n 6️⃣ Auto Mechanics \n 7️⃣ Make Up\n  8️⃣ Hair Dressing\n 9️⃣ Modern Decorations\n 🔟 Small Business Management")
+                        " \n 5️⃣ Nurse Aide \n 6️⃣ Auto Mechanics \n 7️⃣ Make Up\n  8️⃣ Hair Dressing\n 9️⃣ Modern Decorations\n 🔟 Small Business Management"
+                        "\n 1️⃣1️⃣ Graphic Designing \n 1️⃣2️⃣ Crypocurrency \n 1️⃣3️⃣ More to Come")
             users.update_one(
                 {"number": number}, {"$set": {"status": "course-registration"}})
         elif option == 4:
