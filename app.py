@@ -53,11 +53,6 @@ def reply():
     user = users.find_one({"number": number})
     #gonedone = res.message(gradeoneweekone())
     #usersub = users.find_one({"subscription": subscription})
-    fname = user["firstname"]
-    sname = user["lastname"]
-    cell = user["contact"]
-    address = user["address"]
-    guardian = user["guardian"]
     #fullname = fname + sname
     userfree = freemium_users.find_one({"number": number})
     userpaid = premium_users.find_one({"number": number})
@@ -1516,6 +1511,11 @@ def reply():
             # VID Registering Status (password)
 
     elif user["status"] == "vid-password":
+            fname = user["firstname"]
+            sname = user["lastname"]
+            cell = user["contact"]
+            address = user["address"]
+            guardian = user["guardian"]
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             huraymsg = res.message("You are now registered 🎉✨")
             huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
