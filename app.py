@@ -1459,6 +1459,243 @@ def reply():
         else:
             res.message("Please enter a valid response")
 
+
+            # VID Registering Status (1st Name)
+
+    elif user["status"] == "vid-first-name":
+            res.message("   📜 *VID Registration :*")
+            res.message("\n Enter *Last Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "vid-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
+            # VID Registering Status (Surname)
+
+    elif user["status"] == "vid-surname-name":
+            res.message("   📜 *VID Registration :*")
+            res.message("Enter *Guardian / Next of kin's Full Name*")
+            users.update_one(
+                {"number": number},{"$set": {"status": "vid-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+
+            # VID Registering Status (Guardian)
+
+    elif user["status"] == "vid-guardian-name":
+            res.message("   📜 *VID Registration :*")
+            res.message("Enter your address")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "vid-address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
+
+            # VID Registering Status (Address)
+
+    elif user["status"] == "vid-address":
+            res.message("   📜 *VID Registration :*")
+            res.message("Enter *contact details*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "vid-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+            # VID Registering Status (contact)
+
+    elif user["status"] == "vid-contact-reg":
+            res.message("   📜 *VID Registration :*")
+            res.message("Now Enter your access *Password* that you can remember")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "vid-password"}})
+            users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+
+            # VID Registering Status (password)
+
+    elif user["status"] == "vid-password":
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            startmsg = res.message("   1️⃣ *Start :*\n\n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "vid-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+
+
+            # VID Registering Status (Registered)
+
+    elif user["status"] == "vid-registered":
+
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n\n 2️⃣ Login \n\n 3️⃣ Demo \n\n 4️⃣ Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "vid","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0","sub_duration":"","order_date":""}})
+
+
+            # Electronics Registering Status (1st Name)
+
+    elif user["status"] == "electronics-first-name":
+            res.message("   📜 *Electronics Registration :*")
+            res.message("\n Enter *Last Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "electronics-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
+            # Electronics Registering Status (Surname)
+
+    elif user["status"] == "electronics-surname-name":
+            res.message("   📜 *Electronics Registration :*")
+            res.message("Enter *Guardian / Next of kin's Full Name*")
+            users.update_one(
+                {"number": number},{"$set": {"status": "electronics-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+
+            # Electronics Registering Status (Guardian)
+
+    elif user["status"] == "electronics-guardian-name":
+            res.message("   📜 *Electronics Registration :*")
+            res.message("Enter your address")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "electronics-address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
+
+            # Electronics Registering Status (Address)
+
+    elif user["status"] == "electronics-address":
+            res.message("   📜 *Electronics Registration :*")
+            res.message("Enter *contact details*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "electronics-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+            # Electronics Registering Status (contact)
+
+    elif user["status"] == "electronics-contact-reg":
+            res.message("   📜 *Electronics Registration :*")
+            res.message("Now Enter your access *Password* that you can remember")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "electronics-password"}})
+            users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+
+            # Electronics Registering Status (password)
+
+    elif user["status"] == "electronics-password":
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            startmsg = res.message("   1️⃣ *Start :*\n\n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "electronics-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+
+
+            # Electronics Registering Status (Registered)
+
+    elif user["status"] == "electronics-registered":
+
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n\n 2️⃣ Login \n\n 3️⃣ Demo \n\n 4️⃣ Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "electronics","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0","sub_duration":"","order_date":""}})
+
+
+            # Phone Repair Registering Status (1st Name)
+
+    elif user["status"] == "phonerepair-first-name":
+            res.message("   📜 *Phone Repair Registration :*")
+            res.message("\n Enter *Last Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "phonerepair-surname-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"firstname": text}})
+    
+            # Phone Repair Registering Status (Surname)
+
+    elif user["status"] == "phonerepair-surname-name":
+            res.message("   📜 *Phone Repair Registration :*")
+            res.message("Enter *Guardian / Next of kin's Full Name*")
+            users.update_one(
+                {"number": number},{"$set": {"status": "phonerepair-guardian-name"}})
+            users.update_one(
+                {"number": number}, {"$set": {"lastname": text}})
+
+            # Phone Repair Registering Status (Guardian)
+
+    elif user["status"] == "phonerepair-guardian-name":
+            res.message("   📜 *Phone Repair Registration :*")
+            res.message("Enter your address")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "phonerepair-address"}})
+            users.update_one(
+                {"number": number}, {"$set": {"guardian": text}})
+
+            # Phone Repair Registering Status (Address)
+
+    elif user["status"] == "phonerepair-address":
+            res.message("   📜 *Phone Repair Registration :*")
+            res.message("Enter *contact details*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "phonerepair-contact-reg"}})
+            users.update_one(
+                {"number": number}, {"$set": {"address": text}})
+
+            # Phone Repair Registering Status (contact)
+
+    elif user["status"] == "phonerepair-contact-reg":
+            res.message("   📜 *Phone Repair Registration :*")
+            res.message("Now Enter your access *Password* that you can remember")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "phonerepair-password"}})
+            users.update_one(
+                {"number": number}, {"$set": {"contact": text}})
+
+            # Phone Repair Registering Status (password)
+
+    elif user["status"] == "phonerepair-password":
+            res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
+            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            startmsg = res.message("   1️⃣ *Start :*\n\n")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "phonerepair-registered"}})
+            users.update_one(
+                {"number": number}, {"$set": {"password": text}})
+
+
+            # Phone Repair Registering Status (Registered)
+
+    elif user["status"] == "phonerepair-registered":
+
+            ecdgomain = res.message("*Home Learning* is one of the best *e-learning* platform in *Zimbabwe*. "
+                "\n\nYou will be learning wherever you are and whenever you want using your Smartphone,Tablet or Personal Computer"
+                "using your WhatsApp. \n\n Waiting for your Tutor to wake up or come online is now thing of the past."
+                "\n\nTo get Started Respond with the option of your choice using numbers:"
+                    "\n\n*Type*\n\n 1️⃣ Register \n\n 2️⃣ Login \n\n 3️⃣ Demo \n\n 4️⃣ Help  \n")
+            ecdgomain.media("http://fdl.polingony.co.zw/pix/el/homelearn.jpg")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "main"}})
+            users.update_one(
+                {"number": number}, {"$set": {"registration": "Phone Repair","subscription": "freemium","day_number":"0","month_number":"0","week_number":"0","sub_duration":"","order_date":""}})
+
             # Baking Registering Status (1st Name)
 
     elif user["status"] == "baking-first-name":
