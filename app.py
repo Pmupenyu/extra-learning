@@ -1446,7 +1446,7 @@ def reply():
 
     elif user["status"] == "vid-surname-name":
             res.message("   📜 *VID Registration :*")
-            res.message("Enter *Guardian Full Name*")
+            res.message("Enter *Guardian / Next of kin's Full Name*")
             users.update_one(
                 {"number": number},{"$set": {"status": "vid-guardian-name"}})
             users.update_one(
@@ -1525,7 +1525,7 @@ def reply():
 
     elif user["status"] == "wd-surname-name":
             res.message("   📜 *Web Designing  Registration :*")
-            res.message("Enter *Guardian Full Name*")
+            res.message("Enter *Guardian / Next of kin's Full Name*")
             users.update_one(
                 {"number": number},{"$set": {"status": "wd-guardian-name"}})
             users.update_one(
@@ -1603,7 +1603,7 @@ def reply():
 
     elif user["status"] == "mushroom-surname-name":
             res.message("   📜 *MUSHROOM FARMING Registration :*")
-            res.message("Enter *Guardian Full Name*")
+            res.message("Enter *Guardian / Next of kin's Full Name*")
             users.update_one(
                 {"number": number},{"$set": {"status": "mushroom-guardian-name"}})
             users.update_one(
@@ -1683,7 +1683,7 @@ def reply():
 
     elif user["status"] == "modern-fashion-surname-name":
             res.message("   📜 *MODERN FASHION AND FABRICS Registration :*")
-            res.message("Enter *Guardian Full Name*")
+            res.message("Enter *Guardian / Next of kin's Full Name*")
             users.update_one(
                 {"number": number},{"$set": {"status": "modern-fashion-guardian-name"}})
             users.update_one(
@@ -1762,7 +1762,7 @@ def reply():
 
     elif user["status"] == "nurse-aide-surname-name":
             res.message("   📜 *NURSE AIDE Registration :*")
-            res.message("Enter *Guardian Full Name*")
+            res.message("Enter *Guardian / Next of kin's Full Name*")
             users.update_one(
                 {"number": number},{"$set": {"status": "nurse-aide-guardian-name"}})
             users.update_one(
