@@ -2,8 +2,8 @@ from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 from pymongo import MongoClient
 from datetime import datetime
-from grade_one_content import gradeoneweekone
-import app_text
+#from grade_one_content import *
+#from app_text import whatsapp_text
 
 
 # Database
