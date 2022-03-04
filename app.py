@@ -1431,6 +1431,31 @@ def reply():
             res.message("Please enter *First Name*")
             users.update_one(
                 {"number": number}, {"$set": {"status": "deco-first-name"}})
+        elif option == 11:
+            res.message("   📜 *Graphic Designing Registration :*")
+            res.message("Please enter *First Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "graphicd-first-name"}})
+        elif option == 12:
+            res.message("   📜 *Cryptocurrency(Bitcoin) Registration :*")
+            res.message("Please enter *First Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "crypto-first-name"}})
+        elif option == 13:
+            res.message("   📜 *Baking Registration :*")
+            res.message("Please enter *First Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "baking-first-name"}})
+        elif option == 14:
+            res.message("   📜 *Phone Repair Registration :*")
+            res.message("Please enter *First Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "phonerepair-first-name"}})
+        elif option == 15:
+            res.message("   📜 *Electronics Registration :*")
+            res.message("Please enter *First Name*")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "electonics-first-name"}})
         else:
             res.message("Please enter a valid response")
 
