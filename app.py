@@ -53,8 +53,11 @@ def reply():
     user = users.find_one({"number": number})
     #gonedone = res.message(gradeoneweekone())
     #usersub = users.find_one({"subscription": subscription})
-    #fname = user["firstname"]
-    #sname = user["lastname"]
+    fname = user["firstname"]
+    sname = user["lastname"]
+    cell = user["contact"]
+    address = user["address"]
+    guardian = user["guardian"]
     #fullname = fname + sname
     userfree = freemium_users.find_one({"number": number})
     userpaid = premium_users.find_one({"number": number})
@@ -1516,7 +1519,7 @@ def reply():
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n")
             huraymsg = res.message("You are now registered 🎉✨")
             huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
-            startmsg = res.message("   1️⃣ *Start :*\n\n")
+            startmsg = res.message(f"Your name is *{fname}* *{sname}*. \n and your Guardian / Next of Kin is *{guardian}* your address for delivery of awards/certificate is *{address}* and contact number is:*{cell}* \n\n  1️⃣ *Start :*\n\n")
             users.update_one(
                 {"number": number}, {"$set": {"status": "vid-registered"}})
             users.update_one(
