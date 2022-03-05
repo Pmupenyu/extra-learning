@@ -1520,7 +1520,7 @@ def reply():
                         f"Your name is *{fname}* *{sname}*. \n and your Guardian / Next of Kin is *{guardian}* " 
                         f"your address for delivery of awards/certificate is *{address}* and contact number is:*{cell}* \n\n" 
                         " 1️⃣ *Start :*\n\n")
-            huraymsg = res.message("You are now registered 🎉✨")
+            huraymsg = res.message("*You are now registered* 🎉✨")
             huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
             users.update_one(
                 {"number": number}, {"$set": {"status": "vid-registered"}})
