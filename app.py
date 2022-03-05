@@ -1,7 +1,9 @@
+from turtle import delay
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 from pymongo import MongoClient
 from datetime import datetime
+import time
 #from grade_one_content import *
 #from app_text import whatsapp_text
 
@@ -1516,12 +1518,13 @@ def reply():
             cell = user["contact"]
             address = user["address"]
             guardian = user["guardian"]
+            huraymsg = res.message("*You are now registered* 🎉✨")
+            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
+            time.sleep(5.0)
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n"
                         f"Your name is *{fname}* *{sname}*. \n and your Guardian / Next of Kin is *{guardian}* " 
                         f"your address for delivery of awards/certificate is *{address}* and contact number is:*{cell}* \n\n" 
                         " 1️⃣ *Start :*\n\n")
-            huraymsg = res.message("*You are now registered* 🎉✨")
-            huraymsg.media("https://i.ibb.co/BPKnXVP/Red-Velvet-Cake-Waldorf-Astoria.jpg")
             users.update_one(
                 {"number": number}, {"$set": {"status": "vid-registered"}})
             users.update_one(
