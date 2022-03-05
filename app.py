@@ -1517,7 +1517,7 @@ def reply():
             address = user["address"]
             guardian = user["guardian"]
             res.message("   🎉 *CONGRADULATIONS 🎉 :*\n\n"
-                        f"Your name is *{fname}* *{sname}*. \n and your Guardian / Next of Kin is *{guardian}*" 
+                        f"Your name is *{fname}* *{sname}*. \n and your Guardian / Next of Kin is *{guardian}* " 
                         f"your address for delivery of awards/certificate is *{address}* and contact number is:*{cell}* \n\n" 
                         " 1️⃣ *Start :*\n\n")
             huraymsg = res.message("You are now registered 🎉✨")
