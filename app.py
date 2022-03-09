@@ -1,11 +1,12 @@
-from turtle import delay
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 from pymongo import MongoClient
 from datetime import datetime
 import time
+
+
 #from grade_one_content import *
-#from app_text import whatsapp_text
+#import app_text
 
 
 # Database
@@ -60,6 +61,8 @@ def reply():
     userpaid = premium_users.find_one({"number": number})
     #subs = user["subscription"]
    # usersub = users.find_one({"subscription": f"subs"})
+    fmember = users.find_one({"number": number, "registration": "freemium"})
+    pmember = users.find_one({"number": number, "registration": "premium"})
 
 
 
@@ -2413,6 +2416,8 @@ def reply():
 
     users.update_one({"number": number}, {"$push": {"messages": {"text": text, "date": datetime.now()}}})
     return str(res)
+    if bool(user) == false:
+        message("body")
 
 
 if __name__ == "__main__":

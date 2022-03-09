@@ -9,9 +9,9 @@ def whatsapp_text(string):
     "\n\n*Type*\n\n 1️⃣ Register \n\n 2️⃣ Login \n\n 3️⃣ Demo \n\n 4️⃣ Help  \n"
     demo_text = ""
     help_text = "1️⃣ English \n\n2️⃣ Shona \n\n3️⃣ Contacts \n\n4️⃣ About Us \n\n0️⃣ Main Menu"
-    
 
-def message(string):
+
+def pmessage(string):
     for i in string:
         #printing each charactor of the message
         print(i, end="")
@@ -28,4 +28,4 @@ if __name__=='__main__':
     "\n\n*Type*\n\n 1️⃣ Register \n\n 2️⃣ Login \n\n 3️⃣ Demo \n\n 4️⃣ Help  \n"
 
     #calling the function for printing the charactors with delay
-    message(main_text)
+    pmessage(main_text)
