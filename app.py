@@ -103,16 +103,21 @@ def reply():
             users.update_one(
                 {"number": number}, {"$set": {"status": "loginpointer"}})
         elif option == 3:
-            res.message("   📜 *DEMO MODE :*")
+            res.message("   📜 *PROFESSIONAL SERVICES :*")
             users.update_one(
-                {"number": number}, {"$set": {"status": "demo"}})
+                {"number": number}, {"$set": {"status": "services"}})
             res.message("1️⃣ Primary Education \n\n2️⃣ secondary Education \n\n3️⃣ Courses\n\n4️⃣ Help \n\n0️⃣ Main Menu")
 
         elif option == 4:
+            res.message("   📜 *FEATURED PRODUCTS & SERVICES :*")
+            res.message("1️⃣ English \n\n2️⃣ Shona \n\n3️⃣ Contacts \n\n4️⃣ About Us \n\n0️⃣ Main Menu")
+            users.update_one(
+                {"number": number}, {"$set": {"status": "featured"}})
+        elif option == 5:
             res.message("   📜 *HELP MODE :*")
             res.message("1️⃣ English \n\n2️⃣ Shona \n\n3️⃣ Contacts \n\n4️⃣ About Us \n\n0️⃣ Main Menu")
             users.update_one(
-                {"number": number}, {"$set": {"status": "details"}})
+                {"number": number}, {"$set": {"status": "help"}})
         else:
             res.message("Please enter a *valid* response or use *numbers* to respond in this *mode*"
             "\n\nTo get Started Respond with the option of your choice using numbers:"
@@ -755,7 +760,13 @@ def reply():
             res.message(f"👋🏼 Hello *{fname}* You're a Premium user 🥇")
             res.message("💻 Enter your _password_ to continue...")
             users.update_one(
-            {"number": number}, {"$set": {"status": "main"}})
+            {"number": number}, {"$set": {"status": "loginpaid"}})
+        elif user["subscription"] == "superuser":
+            fname = user["firstname"]
+            res.message(f"👋🏼 Hello *{fname}* You're an Administrator/Super user 🥇")
+            res.message("💻 Enter your _password_ to continue...")
+            users.update_one(
+            {"number": number}, {"$set": {"status": "loginsuper"}})
         elif user["subscription"] == "none":
             res.message("*It looks like you're not registered*\n\n *You are now being taken to Registration mode* \n\n\n📝 *YOU ARE NOW IN REGISTRATION MODE :*")
             res.message("1️⃣ Primary Education \n\n2️⃣ secondary Education \n\n3️⃣ Courses\n\n4️⃣ About Us \n\n5️⃣ Help \n\n0️⃣ Main Menu")
@@ -789,6 +800,21 @@ def reply():
             level = user["reglevel"]
             res.message(f"Hello {fname}, and Happy Learning.\nYou can choose from one of the options below: "
                     "\n\n*Type*\n\n 1️⃣ To Start *Learning* \n\n 2️⃣ For _Balance Enquiry_ \n\n 3️⃣ To Learn how it _works_ \n\n 4️⃣ "
+                    "To get _assistance_ \n\n5️⃣ Syllabus")
+            users.update_one(
+                {"number": number}, {"$set": {"status": f"{level}"}})
+        else:
+            res.message("Wrong Password..😒\n\n Try again")
+
+            # Super User Status
+
+    elif user["status"] == "loginsuper":
+        psw = text
+        fname = user["firstname"]
+        if psw == user["password"]:
+            level = user["reglevel"]
+            res.message(f"Hello {fname}, and Happy Learning.\nYou can choose from one of the options below: "
+                    "\n\n*Type*\n\n 1️⃣ Manage Subscription \n\n 2️⃣ Set User Mode \n\n 3️⃣ Manage User Details \n\n 4️⃣ Manage Content "
                     "To get _assistance_ \n\n5️⃣ Syllabus")
             users.update_one(
                 {"number": number}, {"$set": {"status": f"{level}"}})
